@@ -1,1 +1,2 @@
-# wx_project test
+# wx_project 
+微信小项目
