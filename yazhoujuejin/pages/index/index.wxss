@@ -1,0 +1,34 @@
+/* pages/index/index.wxss */
+.content{
+    height: 100%;
+    padding-top: 5rpx
+}
+.remark{
+    font-size: 14px;
+    font-family: 黑体,宋体;
+    width: 95%;
+    margin: auto;
+}
+.orange{
+    color: darkorange
+}
+.index_btn >button{
+    margin-top: 40rpx;
+    width:95%
+}
+
+.login_btn{
+ background-color: #FFCE00;
+ color: white
+}
+.register_btn{
+ background-color: #204f9d;
+ color: white
+}
+
+.login_hover {
+  background-color: #F29F3F;
+}
+.register_hover {
+  background-color: #428bca;
+}

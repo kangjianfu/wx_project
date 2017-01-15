@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/home/home",
+    "pages/assess/assess",
+    "pages/login/login",
+    "pages/forget/pwd",
+    "pages/register/register",
+    "pages/product/product",
+    "pages/product/detail/detail",
+    "pages/product/pact/pact",
+    "pages/myself/myself",
+    "pages/company/company",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"white",
+    "navigationBarBackgroundColor": "#204f9d",
+    "navigationBarTitleText": "亚洲掘金",
+    "backgroundColor": "#fbf9fe"
+  },
+  "tabBar": {
+        "color": "#929292",
+        "backgroundColor": "#ffffff",
+        "selectedColor": "#69C3AA",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页",
+                "iconPath": "static/images/syicon.png",
+                "selectedIconPath": "static/images/syiconf.png"
+            },
+            {
+                "pagePath": "pages/product/product",
+                "text": "产品",
+                "iconPath": "static/images/cpicon.png",
+                "selectedIconPath": "static/images/cpiconf.png"
+            },
+            {
+                "pagePath": "pages/myself/myself",
+                "text": "我的",
+                "iconPath": "static/images/wdicon.png",
+                "selectedIconPath": "static/images/wdiconf.png"
+            }
+        ]
+    }
+}

@@ -1,0 +1,85 @@
+/* pages/home/home.wxss */
+.content{
+    height: 100%;
+    font-family: 黑体,宋体;
+    font-size: 14px;
+}
+.swp{
+    height: 230px;
+}
+.item1{
+    height: 230px;
+    background-image: url('http://img.5ipsp.com/logo/banner_01.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+}
+.selection{
+    margin-top: 50rpx;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+   
+}
+.selection >view{
+    display: flex;
+    flex-flow: column;
+    width: 33.3%;
+    text-align: center;
+    margin: auto;
+}
+.selection view image{
+    height:100rpx;width:100rpx;margin:auto;
+}
+.selection view text{
+    margin-top: 30rpx;
+}
+.hr{
+    height: 5rpx;
+    background: gainsboro;
+    margin: 30rpx 0;
+}
+
+.qjcp{
+    line-height: 42rpx;
+    width: 90%;
+    margin: 20rpx auto
+}
+.title{
+    display: flex;
+    flex-flow: row;
+    margin: 20rpx auto;
+}
+.title text{
+    margin-left: 10rpx;
+}
+.title  image {
+    height: 42rpx;
+    width: 42rpx;
+}
+
+.name{
+    margin: 30rpx auto;
+    font-size: 18px;
+}
+
+.detail{
+    width: 90%;
+    margin: 20rpx auto
+}
+
+.row{
+    display: flex;
+    flex-flow: row;
+    margin: 30rpx auto;
+}
+.row >view{
+    width: 50%;
+}
+.th{
+    font-size: 15px;
+}
+.number{
+    font-size: 18px;
+    color: darkorange;
+}

@@ -1,0 +1,22 @@
+<template name="login">
+ <view class="phone">
+    <input name="input" placeholder="手机号" type="number" bindinput="phone_input" class="phone" maxlength="11" />
+    <view style="width:3%"></view>
+     <button type="default" disabled="{{disabled}}" type="default" hover-class="hover_send" size="mini" bindtap="send_code" loading="{{loading}}" class="pull_right" plain="{{plain}}" >{{btn_text}}</button>
+  </view>
+   
+   <view class="section">
+    <input name="input" bindinput="code_input" placeholder="验证码" type="number"  maxlength="6" />
+  </view>
+   <view class="section">
+    <input name="input" placeholder="6-20位密码" bindinput="pwd_input" maxlength="20"  type="text"  password="true" />
+  </view>
+
+  <view class="btn_view">
+    <button 
+    class='login_btn' type="default"  class="submit_btn"  
+     hover-class="login_hover" size="default" loading="{{loading_sub}}" plain="{{plain}}" 
+     disabled="{{disabled_sub}}" bindtap="submit"> 提 交 
+     </button>
+  </view>
+</template>

@@ -1,0 +1,57 @@
+/* pages/product/product/detail.wxss */
+.content{
+    height: 100%
+}
+.detail{
+    width: 92%;
+    margin: 50rpx auto
+}
+.name{
+    font-size: 18px;
+}
+
+.btn_view{
+    position: fixed;
+    bottom:0; 
+    width: 100%;
+}
+.btn{
+    background-color: #FFCE00;
+    border-radius: 0;
+    color: white 
+}
+.row{
+    display: flex;
+    flex-flow: row;
+    margin: 30rpx auto;
+}
+.row view{
+    width: 50%;
+}
+.th{
+    font-size: 15px;
+}
+.number{
+    font-size: 18px;
+    color: darkorange;
+}
+.row .tr{
+    width: 100%
+}
+.ht{
+    color:#2f99db; 
+    height: 46rpx;
+    font-size: 12px;
+    display: flex;
+    flex-flow: row;
+    margin-top: 50rpx;
+}
+.ht_wz{
+    line-height: 46rpx;
+    margin-left: 10rpx;
+
+}
+.ht_tp{
+    height:46rpx;
+    width:46rpx
+}

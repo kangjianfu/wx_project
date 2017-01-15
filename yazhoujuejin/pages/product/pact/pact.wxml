@@ -1,0 +1,17 @@
+<view class="content">
+  <view class="product_name">{{product.name}}</view>
+  <view class="form">
+    <view class="row">
+      <input placeholder="联系人" type="text" maxlength="50" class="inpt" />
+    </view>
+    <view class="row">
+      <input placeholder="联系电话" type="number" maxlength="11" class="inpt" />
+    </view>
+    <view class="row">
+      <textarea placeholder="预约备注" auto-focus class="desc" />
+    </view>
+  </view>
+  <view class="btn_view">
+    <button type="default" size="default" disabled="{{distabled}}" class="btn" loading="{{loading}}" bindtap="ljyy"> {{btn_text}} </button>
+  </view>
+</view>

@@ -1,0 +1,266 @@
+<view class="content">
+<view class="question">
+<view class="title">
+<text>1:请问你的年龄处于：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q1">
+  <label class="radio" >
+    <radio value="a" name='q1' />A.30岁以下
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q1' />B.31-40岁
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q1' />C.41-50岁
+  </label>
+  <label class="radio" >
+    <radio value="d" name='q1' />D.51-60岁
+  </label>
+  <label class="radio" >
+    <radio value="e" name='q1' />E.60岁以上
+  </label>
+</radio-group>
+</view>
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>2.您家庭预计进行证券投资的资金占家庭现有总资产(不含自住、自用房产及汽车等固定资产)的比例是：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q2">
+  <label class="radio" >
+    <radio value="a" name='q2' />A.70%以上
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q2' />B.50%-70%
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q2' />C.30%－50%
+  </label>
+  <label class="radio" >
+    <radio value="d" name='q2' />D.10%－30%
+  </label>
+  <label class="radio" >
+    <radio value="e" name='q2' />E.10%以下
+  </label>
+</radio-group>
+</view>
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>3.进行一项重大投资后，您通常会觉得：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q3" >
+  <label class="radio" >
+    <radio value="a" name='q3' />A.很高兴，对自己的决定很有信心
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q3' />B.轻松，基本持乐观态度
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q3' />C.基本没什么影响
+  </label>
+  <label class="radio" >
+    <radio value="d" name='q3' />D.比较担心投资结果
+  </label>
+  <label class="radio" >
+    <radio value="e" name='q3' />E.非常担心投资结果
+  </label>
+</radio-group>
+</view>
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>4.如果您需要把大量现金整天携带在身的话，您是否会感到：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q4" >
+  <label class="radio" >
+    <radio value="a" name='q4' />A.非常焦虑
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q4' />B.有点焦虑
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q4' />C.完全不会焦虑
+  </label>
+</radio-group>
+</view>
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>5.当您独自到外地游玩，遇到三岔路口，您会选择：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q5" >
+  <label class="radio" >
+    <radio value="a" name='q5' />A.仔细研究地图和路标
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q5' />B.找别人问路
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q5' />C.大致判断一下方向
+  </label>
+  <label class="radio" >
+    <radio value="d" name='q5' />D.也许会用掷骰子的方式来做决定
+  </label>
+</radio-group>
+</view>
+
+
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>6.假设有两种不同的投资：投资A预期获得5%的收益，有可能承担非常小的损失；投资B预期获得20%的收益，但有可能面临25%甚至更高的亏损。您将您的投资资产分配为：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q6" >
+  <label class="radio" >
+    <radio value="a" name='q6' />A.全部投资于A
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q6' />B.大部分投资于A
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q6' />C.两种投资各一半
+  </label>
+  <label class="radio" >
+    <radio value="d" name='q6' />D.大部分投资于B
+  </label>
+  <label class="radio" >
+    <radio value="e" name='q6' />E.全部投资于B
+  </label>
+</radio-group>
+</view>
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>7.假如您前期用25元购入一只股票，该股现在升到30元，而根据预测该股近期有一半机会升到35元，另一半机会跌到25元，您现在会：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q7" >
+  <label class="radio" >
+    <radio value="a" name='q7' />A.立刻卖出
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q7' />B.部分卖出
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q7' />C.继续持有
+  </label>
+  <label class="radio" >
+    <radio value="d" name='q7' />D.继续买入
+  </label>
+</radio-group>
+</view>
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>8.同上题情况，该股现在已经跌到20元，而您估计该股近期有一半机会升回25元，另一半机会继续下跌到15元，您现在会：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q8">
+  <label class="radio" >
+    <radio value="a" name='q8' />A.立刻卖出
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q8' />B.部分卖出
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q8' />C.继续持有
+  </label>
+  <label class="radio" >
+    <radio value="d" name='q8' />D.继续买入
+  </label>
+</radio-group>
+</view>
+
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>9.当您进行投资时，您的首要目标是：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q9">
+  <label class="radio" >
+    <radio value="a" name='q9' />A.资产保值，我不愿意承担任何投资风险
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q9' />B.尽可能保证本金安全，不在乎收益率比较低
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q9' />C.产生较多的收益，可以承担一定的投资风险
+  </label>
+  <label class="radio" >
+    <radio value="d" name='q9' />D.实现资产大幅增长，愿意承担很大的投资风险
+  </label>
+</radio-group>
+</view>
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>10.您的投资经验可以被概括为：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q10" >
+  <label class="radio" >
+    <radio value="a" name='q10' />A.有限：除银行活期账户和定期存款外，我基本没有其他投资经验
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q10' />B.一般：除银行活期账户和定期存款外，我购买过基金、保险等理财产品，但还需要进一步的指导
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q10' />C.丰富：我是一位有经验的投资者，参与过股票、基金等产品的交易，并倾向于自己做出投资决策
+  </label>
+  <label class="radio" >
+    <radio value="d" name='q10' />D.非常丰富：我是一位非常有经验的投资者，参与过权证、期货或创业板等高风险产品的交易
+  </label>
+</radio-group>
+</view>
+
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>11.您是否了解证券市场的相关知识：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q11">
+  <label class="radio" >
+    <radio value="a" name='q11' />A.从来没有参与过证券交易，对投资知识完全不了解
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q11' />B.学习过证券投资知识，但没有实际操作经验，不懂投资技巧
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q11' />C.了解证券市场的投资知识，并且有过实际操作经验，懂得一些投资技巧
+  </label>
+  <label class="radio" >
+    <radio value="d" name='q11' />D.参与过多年的证券交易，投资知识丰富，具有一定的专业水平
+  </label>
+</radio-group>
+</view>
+
+<view class='hr'></view>
+<view class="question">
+<view class="title">
+<text>12.您用于证券投资的资金不会用作其它用途的时间段为：</text>
+</view>
+<radio-group class="radio-group" bindchange="radioChange" id="q12">
+  <label class="radio" >
+    <radio value="a" name='q12' />A.短期——0到1年
+  </label>
+  <label class="radio" >
+    <radio value="b" name='q12' />B.中期——1到5年
+  </label>
+  <label class="radio" >
+    <radio value="c" name='q12' />C.长期——5年以上
+  </label>
+</radio-group>
+</view>
+<view class="zanwei"></view>
+</view>
+<view class="btn">
+    <button type="primary" size="default"  disabled="{{disabled}}" loading="{{loading}}"  bindtap="submit"> 提交 </button>
+</view>

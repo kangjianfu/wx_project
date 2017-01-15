@@ -1,0 +1,2 @@
+/* pages/product/product.wxss */
+@import "../home/home.wxss"

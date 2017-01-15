@@ -1,0 +1,4 @@
+<view class="content">
+    <import src="../../templates/product/product_item.wxml"/>
+    <template is="product_item" data="{{products: products}}"/>
+</view>

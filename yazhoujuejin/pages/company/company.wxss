@@ -1,0 +1,7 @@
+/* pages/company/company.wxss */
+
+
+.description{
+    width: 95%;
+    margin: 50rpx auto;
+}

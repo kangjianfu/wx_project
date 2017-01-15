@@ -1,0 +1,14 @@
+<!--pages/company/company.wxml-->
+<view class="content">
+    <view class="description"> 
+        <text>亚洲掘金投资管理(北京)有限公司成立于2016年,注册资金 1000万元，总部位于北京，是中国证券投资基金业协会备案的私募投资基金管理人之一。       </text>
+    </view>
+
+
+    
+    <view>
+        <button  type="default" size="default" 
+         bindtap="clear_store"  > 清理缓存 </button>
+    </view>
+
+</view>

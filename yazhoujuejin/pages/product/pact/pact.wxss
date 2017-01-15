@@ -1,0 +1,39 @@
+/* pages/product/pact/pact.wxss */
+.form{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.product_name{
+    font-size: 1.3rem;
+    margin: 50rpx auto;
+    text-align: center;
+}
+.inpt{
+    height: 1.8rem;
+    line-height: 1.8rem;
+    border-bottom: 1px solid gainsboro;
+    
+}
+.row{
+    margin: 30rpx 0;
+}
+.desc{
+     border-bottom: 1px solid gainsboro;
+     width: 100%;
+     height: 200rpx;
+     font-family:UICTFontTextStyleBody;
+}
+.btn_view{
+    position: fixed;
+    bottom:0; 
+    width: 100%;
+}
+.btn{
+    background-color: #204f9d;
+    border-radius: 0;
+    color: white 
+}
+.btn_hover {
+  background-color: #428bca;
+}

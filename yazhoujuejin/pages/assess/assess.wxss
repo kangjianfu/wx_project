@@ -1,0 +1,40 @@
+/* pages/assess/assess.wxss */
+.radio-group{
+    display: flex;
+    flex-flow: column;
+    font-size: 14px
+}
+.content{
+    width: 95%;
+    margin: auto;
+    font-family: 黑体,宋体;
+   
+}
+.title{
+    margin-top: 20rpx;
+    font-size: 15px
+}
+.question{
+    padding: 5rpx;
+}
+.radio{
+    margin-top: 10px;
+}
+.hr{
+    margin-top: 5px;
+    height: 5px;
+    border-bottom: 1px #ccc solid
+}
+.btn{
+    position: fixed;
+    bottom:0;
+   
+    width: 100%;
+}
+.btn >button{
+    border-radius: 0px;
+    background-color: #0d3d58;
+}
+.zanwei{
+    height: 80px;
+}
