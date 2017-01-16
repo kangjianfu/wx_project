@@ -13,6 +13,7 @@ Page({
   },
   onReady:function(){
     // 页面渲染完成
+    this.setData({hidden:true})
   },
   onShow:function(){
     // 页面显示

@@ -15,6 +15,7 @@ Page({
   },
   onReady:function(){
     // 页面渲染完成
+     this.setData({hidden:true})
   },
   onShow:function(){
     // 页面显示
@@ -25,10 +26,24 @@ Page({
   open_ht:function(e){
     console.info(e)
     var url=e.currentTarget.id;
+    console.info(url)
+
+    // wx.openDocument({
+    //   filePath: url,
+    //   success: function (res) {
+    //     console.log('打开文档成功')
+    //   },
+    //   fail:function(){
+    //     console.log('打开文档失败')
+    //   }
+    // })
     wx.downloadFile({
-      url: url, //仅为示例，并非真实的资源
+      url: 'https://api.5ipsp.com', 
       success: function(res) {
         console.info(res)
+      },
+      fail:function(e){
+        console.info(e)
       }
     })
 

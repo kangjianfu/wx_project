@@ -17,11 +17,11 @@
       <image src="../../static/images/icon_1.png"></image>
       <text>公司简介</text>
     </view>
-    <view>
+    <view bindtap="go_news">
       <image src="../../static/images/icon_2.png"></image>
       <text>掘金动态</text>
     </view>
-    <view>
+    <view  bindtap="join_us">
       <image src="../../static/images/icon_3.png"></image>
       <text>加入我们</text>
     </view>
@@ -33,27 +33,12 @@
       <text>旗舰产品</text>
     </view>
     </view>
-    <!--<block wx:for="{{products}}" wx:key="{{item}}">
-      <view class="product_item">
-        <view>
-          <text class='product_name'>{{item.name}}</text>
-        </view>
-        <view>
-          <text>单位净值</text>
-          <text class="item_content orange">{{item.current_net_worth}}</text>
-          <text>累计净值</text>
-          <text class="item_content orange">{{item.accumulate_income}}</text>
-        </view>
-        <view>
-          <text>成立日期</text>
-          <text class="item_content">{{item.create_time}}</text>
-          <text>更新日期</text>
-          <text class="item_content">{{item.update_time}}</text>
-        </view>
-      </view>
-      <view class="hr"></view>
-    </block>-->
     <import src="../../templates/product/product_item.wxml"/>
     <template is="product_item" data="{{products: products}}"/>
-  
 </view>
+
+<view>
+ <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+  </view>

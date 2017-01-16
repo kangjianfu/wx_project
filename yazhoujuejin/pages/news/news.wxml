@@ -1,0 +1,27 @@
+
+<!--pages/news/news.wxml-->
+<view class="content">
+  <view class="list">
+    <block wx:for="{{news}}" wx:key="{{item}}">
+      <view class="item" id="{{item.id}}" bindtap='show_detail' >
+        <view class="title">
+            <text >{{item.title}}</text>
+        </view>
+        <view class="time">
+         <text >{{item.create_time}}</text>
+        </view>
+      </view>
+      <block wx:if="{{index!=news.length-1}}">
+        <view class="hr"></view>
+      </block>
+    </block>
+  </view>
+</view>
+
+
+
+<view>
+ <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+  </view>

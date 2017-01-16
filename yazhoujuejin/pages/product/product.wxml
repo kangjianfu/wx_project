@@ -2,3 +2,9 @@
     <import src="../../templates/product/product_item.wxml"/>
     <template is="product_item" data="{{products: products}}"/>
 </view>
+
+<view>
+ <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+  </view>

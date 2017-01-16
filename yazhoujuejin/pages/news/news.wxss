@@ -1,0 +1,28 @@
+/* pages/news/news.wxss */
+.content{
+    height: 100%
+}
+.list{
+    width: 90%;
+    margin: 50rpx auto;
+}
+.item{
+    margin: 30rpx auto;
+    display: flex;
+    flex-flow: row;
+}
+.time{
+    margin-left: 10rpx;
+    font-size: 10px;
+    color:#2f99db; 
+    padding-top: 10rpx;
+    width: 20%
+}
+.title{
+    font-size: 14px;
+    width: 80%;
+    
+}
+.hr{
+    border-bottom: 1px dashed gainsboro
+}

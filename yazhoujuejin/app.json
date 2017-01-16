@@ -11,6 +11,9 @@
     "pages/product/pact/pact",
     "pages/myself/myself",
     "pages/company/company",
+    "pages/news/news",
+    "pages/news/detail/detail",
+    "pages/join/us",
     "pages/logs/logs"
   ],
   "window":{

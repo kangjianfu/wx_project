@@ -32,3 +32,9 @@
     <button type="default" size="default" disabled="{{distabled}}" hover-class="btn_hover" class="btn"  loading="{{loading}}"  bindtap="ljyy"> {{btn_text}} </button>
 </view>
 </view>
+
+<view>
+ <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+  </view>

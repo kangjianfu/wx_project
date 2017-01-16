@@ -1,0 +1,19 @@
+
+<!--pages/news/detail/detail.wxml-->
+<view class="content">
+    <view class="detail" wx:if="{{is_text}}">
+      <text>{{content}}</text>
+    </view>
+
+    <view class="tupian">
+      <block wx:for="{{images}}" wx:key="{{item}}">
+        <image src="{{item}}" mode="scaleToFill" style="width:370px;height:540px" ></image>
+      </block>
+    </view>
+
+  <view class="body-view">
+  </view>
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+</view>

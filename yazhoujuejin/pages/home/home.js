@@ -15,6 +15,7 @@ Page({
   },
   onReady:function(){
     // 页面渲染完成
+    this.setData({hidden:true})
   },
   onShow:function(){
     // 页面显示
@@ -35,12 +36,22 @@ Page({
   go_company:function(){
     wx.navigateTo({
       url: '../company/company'
-    })
+      })
   },
   show_product_detail:function(e){
     var id=e.currentTarget.id;
     wx.navigateTo({
       url: '../product/detail/detail?id='+id
+    })
+  },
+  go_news:function(e){
+     wx.navigateTo({
+      url: '../news/news'
+    })
+  },
+  join_us:function(e){
+    wx.navigateTo({
+      url: '../join/us'
     })
   }
 });

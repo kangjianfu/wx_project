@@ -1,0 +1,9 @@
+/* pages/join/us.wxss */
+
+.content{
+     width: 90%;
+    margin: 0 auto;
+}
+.vi{
+    margin-top: 30rpx;
+}

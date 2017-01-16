@@ -1,2 +1,38 @@
+
 <!--pages/myself/myself.wxml-->
-<text>pages/myself/myself.wxml</text>
+<view class="content">
+  <view class="item">
+    <view class="info">
+      <view>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      </view>
+      <view class="name">
+        <view class="nick_name">{{userInfo.nickName}}</view>
+        <view class="phone">{{customer.phone}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="item">
+  <view class="info">
+    航定微信
+  </view>
+  </view>
+  <view class="item">
+  <view class="info">
+    关于我们
+  </view>
+  </view>
+  <view class="item">
+  <view class="info">
+    联系我们
+  </view>
+  </view>
+  <view class="item">
+  <view class="info">
+    退出登录
+  </view>
+  </view>
+
+  
+</view>

@@ -1,0 +1,12 @@
+/* pages/news/detail/detail.wxss */
+.content{
+    height: 100%
+}
+.detail{
+    width: 90%;
+    margin: 50rpx auto;
+}
+.tupian{
+    width: 90;
+    margin: 20prx auto;
+}
