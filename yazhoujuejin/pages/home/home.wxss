@@ -77,9 +77,9 @@
     width: 50%;
 }
 .th{
-    font-size: 15px;
+    font-size: 13px;
 }
 .number{
-    font-size: 18px;
+    font-size: 17px;
     color: darkorange;
 }

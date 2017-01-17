@@ -2,37 +2,88 @@
 <!--pages/myself/myself.wxml-->
 <view class="content">
   <view class="item">
-    <view class="info">
+    <view class="myinfo">
       <view>
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <image src="../../static/images/userIcon.png" style="height:120rpx;width:120rpx"></image>
       </view>
-      <view class="name">
-        <view class="nick_name">{{userInfo.nickName}}</view>
-        <view class="phone">{{customer.phone}}</view>
+      <view class="phone">
+        <text>{{customer.phone}}</text>
+      </view>
+      <view style="height:10rpx">
       </view>
     </view>
   </view>
 
-  <view class="item">
-  <view class="info">
-    航定微信
-  </view>
-  </view>
-  <view class="item">
-  <view class="info">
-    关于我们
-  </view>
-  </view>
-  <view class="item">
-  <view class="info">
-    联系我们
-  </view>
-  </view>
-  <view class="item">
-  <view class="info">
-    退出登录
-  </view>
+  <view class="item" hover="true" hover-class="hover_bg">
+    <view class="info">
+      <view class="row">
+        <image src="../../static/images/fxIcon.png" class="gywm"></image>
+        <text class="wz">修改登录密码</text>
+        <view class="right">
+          <image src="../../static/images/jiantou.png" class="jiantou"></image>
+        </view>
+      </view>
+    </view>
   </view>
 
-  
+  <view class="item" hover="true" hover-class="hover_bg">
+    <view class="info">
+      <view class="row">
+        <image src="../../static/images/fxIcon.png" class="gywm"></image>
+        <text class="wz">私募风险评测</text>
+         <text class="wz1">{{customer.assess_type}}</text>
+        <view class="right">
+          <image src="../../static/images/jiantou.png" class="jiantou"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="item" hover="true" hover-class="hover_bg">
+    <view class="info">
+      <view class="row">
+        <image src="../../static/images/fxIcon.png" class="gywm"></image>
+        <text class="wz">风险提示</text>
+        <view class="right">
+          <image src="../../static/images/jiantou.png" class="jiantou"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class="item">
+    <view class="info" hover="true" hover-class="hover_bg">
+      <view class="row">
+        <image src="../../static/images/aboutIcon.png" class="gywm"></image>
+        <text class="wz">关于亚洲掘金</text>
+        <view class="right">
+          <image src="../../static/images/jiantou.png" class="jiantou"></image>
+        </view>
+      </view>
+      <view class="hr"></view>
+    </view>
+    <view class="info" hover="true" hover-class="hover_bg" bindtap="contact_us">
+      <view class="row" >
+        <image src="../../static/images/phoneIcon.png" class="gywm"></image>
+        <text class="wz">联系我们</text>
+        <view class="right">
+          <image src="../../static/images/jiantou.png" class="jiantou"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+  <view class="tcdl">
+    <button size="{{default}}" type="{{warn}}" bindtap="show_sheet" class="btn_tcdl" loading="{{false}}" plain="{{false}}">
+      退出登录
+    </button>
+  </view>
 </view>
+

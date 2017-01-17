@@ -8,24 +8,28 @@
 .item{
   width: 100%;
   background: white;
-  margin-top: 30rpx;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
 }
 .info{
     display: flex;
-    flex-flow: row;
-    width: 90%;
+    flex-flow: column;
+    width: 100%;
     margin: auto;
   
 }
 
 
-.userinfo-avatar {
-  width: 108rpx;
-  height: 108rpx;
-  margin: 15rpx;
-  border-radius: 50%;
+
+.myinfo{
+  text-align: center;
 }
 
+.phone{
+  padding-bottom: 30rpx;
+  height: 35px;
+  line-height: 35px
+}
 
 
 .name{
@@ -38,4 +42,59 @@
 .nick_name{
   margin-bottom: 10rpx;
  
+}
+.gywm{
+  height: 32rpx;
+  width: 32rpx;
+}
+.wz{
+  height: 32rpx;
+  line-height: 32rpx;
+  margin-left: 15rpx;
+}
+.wz1{
+  height: 32rpx;
+  line-height: 32rpx;
+  position: absolute;
+  right: 20rpx;
+  margin-right: 50rpx;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 20rpx auto
+}
+.jiantou{
+  height: 32rpx;
+  width: 32rpx;
+}
+.right{
+  right: 20px;
+  position: absolute;
+}
+.tcdl{
+  margin: 50rpx auto;
+   width:90%;
+}
+.btn_tcdl{
+  background-color: #e10500;
+  color: white;
+  border-radius: 10px;
+}
+.hover_bg{
+  background-color: gainsboro;
+}
+.hr{
+  border-bottom: 1px gainsboro solid;
+  height:2px;
+  margin: 0 auto;
+  width: 90%;
+}
+.qdtc{
+  color: #e10500;
+}
+.call_us{
+  height: 24px;
+  line-height: 24px;
 }

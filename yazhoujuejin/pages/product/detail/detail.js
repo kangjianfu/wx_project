@@ -4,6 +4,7 @@ Page({
   data:{
     btn_text:"前往预约",
     distabled:false,
+    loading_text:"加载中...",
     loading:false
   },
   onLoad:function(options){
@@ -24,29 +25,9 @@ Page({
     // 页面隐藏
   },
   open_ht:function(e){
-    console.info(e)
     var url=e.currentTarget.id;
-    console.info(url)
-
-    // wx.openDocument({
-    //   filePath: url,
-    //   success: function (res) {
-    //     console.log('打开文档成功')
-    //   },
-    //   fail:function(){
-    //     console.log('打开文档失败')
-    //   }
-    // })
-    wx.downloadFile({
-      url: 'https://api.5ipsp.com', 
-      success: function(res) {
-        console.info(res)
-      },
-      fail:function(e){
-        console.info(e)
-      }
-    })
-
+    var that=this;
+    open_doc(that,url);
   },
   ljyy:function(e){
     wx.navigateTo({
@@ -104,4 +85,69 @@ var init_btn=function(id,that){
       }
     }
   })
+}
+
+//打开文档
+var open_doc=function(that,url){
+  that.setData({hidden:false,loading_text:"获取文件中..."})
+    wx.getSavedFileList({
+      success: function(res){
+        if(res.fileList.length==0){
+            wx.downloadFile({
+              url: url,
+              success: function(res){
+                var temp_path=res.tempFilePath
+                  wx.saveFile({
+                    tempFilePath: temp_path,
+                    success: function(res) {
+                      var savedFilePath = res.savedFilePath
+                      console.info(savedFilePath)
+                      that.setData({hidden:true})
+                      wx.openDocument({
+                        filePath: savedFilePath,
+                        success: function (res) {
+                         that.setData({hidden:true})
+                        }
+                      })
+                    }
+                  })
+              },fail:function(e){
+               wx.showToast({
+                  title: '网络异常，文件下载失败。',
+                  icon: 'success',
+                  duration: 2000
+                })
+                that.setData({hidden:true});
+              }
+            })
+        }else{
+          //获取文件
+          var fileList=res.fileList;
+          for(var i in fileList){
+            var path=fileList[i].filePath;
+            console.info(path)
+            if(path.indexOf('pdf')>0){
+              console.info(path)
+              that.setData({hidden:true})
+              wx.openDocument({
+                  filePath: path,
+                  success: function (res) {
+                    that.setData({hidden:true})
+                    console.info("打开成功。。。。")
+                  },fail:function(e){
+                      connsole.info(e);
+                      console.info("打开失败。。。。")
+                  }
+              })
+              return;
+            }else{
+              console.info("文件我i炸豆腐")
+            }
+          }
+        }
+      },
+      fail: function() {
+        
+      }
+    })
 }
