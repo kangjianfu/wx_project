@@ -2,6 +2,31 @@
 
 
 .description{
-    width: 95%;
+    width: 90%;
     margin: 50rpx auto;
+}
+.row{
+    width: 40%;
+    margin: 50rpx auto;
+    display: flex;
+    text-align: center;
+    flex-direction: row
+}
+.tp{
+    height: 64rpx;
+    width: 80rpx;
+}
+.wz{
+    height: 64rpx;
+    line-height: 64rpx;
+    margin-left: 30rpx;
+    color: #13227a;
+}
+.hr{
+    border-bottom: 1px dashed gainsboro;
+    width: 90%;
+     margin:0 auto;
+}
+.hover_bg{
+    background-color: gainsboro
 }

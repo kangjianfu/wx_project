@@ -1,0 +1,41 @@
+<view class="content">
+  <view class="name">{{product.name}}</view>
+  <form bindsubmit="formSubmit">
+    <view class="row">
+      <label for="current_net_worth">
+        当前净值
+      </label>
+      <input type="digit" id="current_net_worth" name="current_net_worth" class="input" placeholder="当前净值" value="{{product.current_net_worth}}" />
+    </view>
+    <view class="hr"></view>
+    <view class="row">
+      <label for="accumulate_income">
+        累计净值
+      </label>
+      <input type="digit" id="accumulate_income" name="accumulate_income" class="input" placeholder="累计净值" value="{{product.current_net_worth}}" />
+    </view>
+    <view class="hr"></view>
+    <view class="row">
+      <label for="update_time">
+        更新日期
+      </label>
+      <picker mode="date" value="{{date}}" id="update_time" name="update_time" start="{{product.create_time}}" end="2099-09-01" bindchange="bindDateChange">
+        <view class="picker">{{date}}
+        </view>
+      </picker>
+    </view>
+    <view class="hr"></view>
+    <view class="row">
+      <label for="description">
+        描述说明
+      </label>
+      <view class="desc">
+        <textarea id="description" class="description" name="description" auto-height placeholder="净值说明" value=" {{product.description}}" />
+      </view>
+    </view>
+    <view class="hr"></view>
+    <view class="btn-area">
+      <button formType="submit" class="btn" hover-class="btn_hover" loading="{{laoding}}">提 交</button>
+    </view>
+  </form>
+</view>

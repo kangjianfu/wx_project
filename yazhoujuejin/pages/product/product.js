@@ -7,7 +7,6 @@ Page({
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    console.info(home);
     var that=this;
     home.init_product(that);
   },
@@ -26,6 +25,7 @@ Page({
   //下拉刷新,
   var that=this;
   that.setData({flush:true})
+  that.setData({hidden:false})
    home.init_product(that);
   },
   onUnload:function(){

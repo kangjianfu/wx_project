@@ -1,0 +1,37 @@
+
+<!--pages/myself/product/list.wxml-->
+<block wx:for="{{products}}" wx:key="{{item}}">
+<view class="content" hover="true" hover-class="hovered" bindtap="edit_product" id="{{item.id}}">
+    <view class="item">
+      <view class="name">
+        <text>{{item.name}}</text>
+      </view>
+      <view class="row">
+        <view>
+          <text >单位净值：</text>
+          <text class="number">{{item.current_net_worth}}</text>
+        </view>
+        <view>
+          <text >累计净值：</text>
+          <text class="number">{{item.accumulate_income}}</text>
+        </view>
+      </view>
+      <view class="row">
+        <view>
+          <text >成立日期：</text>
+          <text>{{item.create_time}}</text>
+        </view>
+        <view>
+          <text>更新日期：</text>
+          <text>{{item.update_time}}</text>
+        </view>
+      </view>
+
+       <view class="row">
+          <text class="th">描述（说明）：</text>
+          <text>{{item.description}}</text>
+        </view>
+    </view>
+      <view class="hr"></view>
+</view>
+</block>

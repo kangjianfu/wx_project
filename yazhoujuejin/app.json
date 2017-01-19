@@ -13,6 +13,10 @@
     "pages/company/company",
     "pages/news/news",
     "pages/news/detail/detail",
+    "pages/myself/fxts/fxts",
+     "pages/myself/pwd/pwd",
+     "pages/myself/product/list",
+     "pages/product/edit/edit",
     "pages/join/us",
     "pages/logs/logs"
   ],
@@ -25,26 +29,26 @@
   "tabBar": {
         "color": "#929292",
         "backgroundColor": "#ffffff",
-        "selectedColor": "#69C3AA",
+        "selectedColor": "#13227a",
         "borderStyle": "black",
         "list": [
             {
                 "pagePath": "pages/home/home",
                 "text": "首页",
-                "iconPath": "static/images/syicon.png",
-                "selectedIconPath": "static/images/syiconf.png"
+                "iconPath": "static/images/shouye.png",
+                "selectedIconPath": "static/images/shouye_selected.png"
             },
             {
                 "pagePath": "pages/product/product",
                 "text": "产品",
-                "iconPath": "static/images/cpicon.png",
-                "selectedIconPath": "static/images/cpiconf.png"
+                "iconPath": "static/images/product.png",
+                "selectedIconPath": "static/images/product_selected.png"
             },
             {
                 "pagePath": "pages/myself/myself",
                 "text": "我的",
-                "iconPath": "static/images/wdicon.png",
-                "selectedIconPath": "static/images/wdiconf.png"
+                "iconPath": "static/images/my.png",
+                "selectedIconPath": "static/images/my_selected.png"
             }
         ]
     }

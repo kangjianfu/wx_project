@@ -1,0 +1,60 @@
+/* pages/myself/product/edit/edit.wxss */
+.content{
+    margin: 0 auto;
+}
+.name{
+    margin: 50rpx 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 14px;
+    margin: 30rpx auto;
+    width: 90%;
+}
+label{
+    width: 25%;
+    text-align: left;
+}
+
+input{
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 1px solid #ccc;
+    width: 75%;
+    border-right: 1px solid #ccc;
+}
+.desc{
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 75%;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+picker{
+    width: 75%;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.hr{
+    height: 5rpx;
+    margin: 20rpx 0;
+    border-bottom: 1px gainsboro dashed
+}
+.btn-area{
+    width: 90%;
+    margin: 50rpx auto;
+}
+.btn{
+    background-color: #FFCE00;
+    color: white;
+}
+.btn_hover{
+    background-color: #F29F3F
+}

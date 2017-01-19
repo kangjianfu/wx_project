@@ -1,7 +1,7 @@
 
 <!--pages/myself/myself.wxml-->
 <view class="content">
-  <view class="item">
+  <view class="item" style="margin-top:30rpx;">
     <view class="myinfo">
       <view>
         <image src="../../static/images/userIcon.png" style="height:120rpx;width:120rpx"></image>
@@ -14,10 +14,10 @@
     </view>
   </view>
 
-  <view class="item" hover="true" hover-class="hover_bg">
+  <view class="item" hover="true" hover-class="hover_bg"  bindtap="go_editPwd">
     <view class="info">
       <view class="row">
-        <image src="../../static/images/fxIcon.png" class="gywm"></image>
+        <image src="../../static/images/lock.png" class="gywm"></image> 
         <text class="wz">修改登录密码</text>
         <view class="right">
           <image src="../../static/images/jiantou.png" class="jiantou"></image>
@@ -26,12 +26,12 @@
     </view>
   </view>
 
-  <view class="item" hover="true" hover-class="hover_bg">
+  <view class="item" hover="true" hover-class="hover_bg" bindtap="go_smfxpc">
     <view class="info">
       <view class="row">
-        <image src="../../static/images/fxIcon.png" class="gywm"></image>
+        <image src="../../static/images/smfxpc.png" class="gywm"></image>
         <text class="wz">私募风险评测</text>
-         <text class="wz1">{{customer.assess_type}}</text>
+         <text class="wz1">{{assess_type}}</text>
         <view class="right">
           <image src="../../static/images/jiantou.png" class="jiantou"></image>
         </view>
@@ -39,10 +39,10 @@
     </view>
   </view>
 
-  <view class="item" hover="true" hover-class="hover_bg">
+  <view class="item" hover="true" hover-class="hover_bg" bindtap="go_fxts">
     <view class="info">
       <view class="row">
-        <image src="../../static/images/fxIcon.png" class="gywm"></image>
+        <image src="../../static/images/fxts.png" class="gywm"></image>
         <text class="wz">风险提示</text>
         <view class="right">
           <image src="../../static/images/jiantou.png" class="jiantou"></image>
@@ -54,19 +54,19 @@
 
 
   <view class="item">
-    <view class="info" hover="true" hover-class="hover_bg">
+    <!--<view class="info" hover="true" hover-class="hover_bg">
       <view class="row">
-        <image src="../../static/images/aboutIcon.png" class="gywm"></image>
+        <image src="../../static/images/about.png" class="gywm"></image>
         <text class="wz">关于亚洲掘金</text>
         <view class="right">
           <image src="../../static/images/jiantou.png" class="jiantou"></image>
         </view>
       </view>
       <view class="hr"></view>
-    </view>
+    </view>-->
     <view class="info" hover="true" hover-class="hover_bg" bindtap="contact_us">
       <view class="row" >
-        <image src="../../static/images/phoneIcon.png" class="gywm"></image>
+        <image src="../../static/images/phone.png" class="gywm"></image>
         <text class="wz">联系我们</text>
         <view class="right">
           <image src="../../static/images/jiantou.png" class="jiantou"></image>
@@ -74,6 +74,19 @@
       </view>
     </view>
   </view>
+
+  <view class="item" hover="true" hover-class="hover_bg" bindtap="sys_seting">
+    <view class="info">
+      <view class="row">
+        <image src="../../static/images/seting.png" class="gywm"></image>
+        <text class="wz">系统配置</text>
+        <view class="right">
+          <image src="../../static/images/jiantou.png" class="jiantou"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
 
 
 

@@ -43,31 +43,41 @@ Page({
     this.setData({loading:true})
     var customer_base_info=wx.getStorageSync('customer_base_info')
     var customer=customer_base_info.customer;
+    var submit_url=app.server_url+"/risk/questionnaire/answer"
+    var redict_url='../home/home'
+    var flag=false;
+    if(customer.assess_type){
+      submit_url=app.server_url+"/risk/update/answer";
+      //redict_url='../myself/myself'
+      flag=true;
+    }
     wx.request({
-      url: app.server_url+"/risk/questionnaire/answer",
+      url: submit_url,
       data: {result:params,phone:customer.phone},
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res){
         if(res.data.ret==0){
           customer.status=2;
-          customer.risk_type=res.data.result;
-          customer.risk_desc=res.data.description;
+          customer.assess_type=res.data.result;
+          customer.assess_description=res.data.description;
           wx.setStorageSync('customer_base_info', customer_base_info)
-          wx.switchTab({
-            url: '../home/home',
-            success:function(){
-              wx.showToast({
-                  title: res.data.result,
-                  icon: 'success',
-                  duration: 2000
-              });
-              // wx.showModal({
-              // title: res.data.result,
-              // showCancel:false,
-              //  content: res.data.res.data.description,
-              // })
-            }
-          })
+          if(flag){
+              wx.navigateBack({
+                delta: 1
+              })
+          }else{
+             wx.switchTab({
+              url: redict_url,
+              success:function(){
+                wx.showToast({
+                    title: res.data.result,
+                    icon: 'success',
+                    duration: 2000
+                });
+              }
+            })
+          }
+         
         }
       },
       fail: function() {

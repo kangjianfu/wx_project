@@ -1,0 +1,19 @@
+
+<!--pages/myself/pwd/pwd.wxml-->
+<view class="content">
+  <form bindsubmit="formSubmit" >
+    <view class="section">
+      <input name="old" password="true" class="input" placeholder="请输入原密码" />
+    </view>
+    <!--<view class="hr"></view>-->
+    <view class="section">
+      <input name="new_1"   password="true"  class="input" maxlength="20" placeholder="请输入6-20位新密码" />
+    </view>
+    <view class="section">
+      <input name="new_2"    password="true" class="input"   maxlength="20" placeholder="再次输入新密码" />
+    </view>
+    <view class="btn-area">
+      <button formType="submit" class="btn" hover-class="btn_hover"  loading="{{laoding}}" >提 交</button>
+    </view>
+  </form>
+</view>

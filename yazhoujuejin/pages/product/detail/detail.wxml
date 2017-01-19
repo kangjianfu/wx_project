@@ -23,7 +23,7 @@
             <view><text class="th">发布日期：</text><text>{{detail.publish_start_time}}</text></view>
         </view>
             <view class="ht" bindtap='open_ht' id="{{detail.contract_url}}" >
-             <image src="../../../static/images/htIcon.png" class='ht_tp'></image>
+             <image src="../../../static/images/ht.png" class='ht_tp'></image>
                 <view class="ht_wz"> <text>查看{{detail.name}}合同范本</text></view>
             </view>
 

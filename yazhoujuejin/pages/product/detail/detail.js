@@ -44,11 +44,10 @@ var init_project_detail=function(id,that){
       url: app.server_url+'/product/info/by/'+id,
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res){
-        console.info(res.data)
         if(res.data.ret==0){
           var product=res.data.obj;
           product.create_time=product.create_time.substring(0,product.create_time.indexOf('T'));
-          product.update_time=product.create_time.substring(0,product.update_time.indexOf('T'));
+          product.update_time=product.update_time.substring(0,product.update_time.indexOf('T'));
           product.publish_start_time=product.publish_start_time.substring(0,product.publish_start_time.indexOf('T'));
              //把产品信息放入缓存中
           wx.setStorageSync("product_"+product.id, product);

@@ -14,15 +14,15 @@
   </swiper>
   <view class="selection">
     <view bindtap="go_company">
-      <image src="../../static/images/icon_1.png"></image>
+      <image src="../../static/images/gongsi.png"></image>
       <text>公司简介</text>
     </view>
     <view bindtap="go_news">
-      <image src="../../static/images/icon_2.png"></image>
+      <image src="../../static/images/dongtai.png"></image>
       <text>掘金动态</text>
     </view>
     <view  bindtap="join_us">
-      <image src="../../static/images/icon_3.png"></image>
+      <image src="../../static/images/join_us.png"></image>
       <text>加入我们</text>
     </view>
   </view>

@@ -3,6 +3,7 @@ var app=getApp();
 Page({
   data:{
     currentPage:1,
+    hover:true,
     news:[]
   },
   onLoad:function(options){

@@ -8,8 +8,7 @@
 .item{
   width: 100%;
   background: white;
-  margin-top: 50rpx;
-  margin-bottom: 50rpx;
+  margin-top: 10rpx;
 }
 .info{
     display: flex;
@@ -26,7 +25,6 @@
 }
 
 .phone{
-  padding-bottom: 30rpx;
   height: 35px;
   line-height: 35px
 }
@@ -44,20 +42,20 @@
  
 }
 .gywm{
-  height: 32rpx;
-  width: 32rpx;
+  height: 48rpx;
+  width: 48rpx;
 }
 .wz{
-  height: 32rpx;
-  line-height: 32rpx;
+  height: 48rpx;
+  line-height: 48rpx;
   margin-left: 15rpx;
 }
 .wz1{
-  height: 32rpx;
-  line-height: 32rpx;
+  height: 48rpx;
+  line-height: 48rpx;
   position: absolute;
   right: 20rpx;
-  margin-right: 50rpx;
+  margin-right: 70rpx;
 }
 .row{
   display: flex;
@@ -66,8 +64,8 @@
   margin: 20rpx auto
 }
 .jiantou{
-  height: 32rpx;
-  width: 32rpx;
+  height: 48rpx;
+  width: 48rpx;
 }
 .right{
   right: 20px;
@@ -97,4 +95,8 @@
 .call_us{
   height: 24px;
   line-height: 24px;
+}
+.password{
+  background-image: url('../../static/svg/lock.svg');
+  background-size: 32rpx 32rpx;
 }

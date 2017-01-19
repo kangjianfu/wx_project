@@ -39,19 +39,19 @@
     width: 100%
 }
 .ht{
-    color:#2f99db; 
-    height: 46rpx;
+    color:#13227a; 
+    height: 64rpx;
     font-size: 12px;
     display: flex;
     flex-flow: row;
     margin-top: 50rpx;
 }
 .ht_wz{
-    line-height: 46rpx;
+    line-height: 64rpx;
     margin-left: 10rpx;
 
 }
 .ht_tp{
-    height:46rpx;
-    width:46rpx
+    height:64rpx;
+    width:64rpx
 }

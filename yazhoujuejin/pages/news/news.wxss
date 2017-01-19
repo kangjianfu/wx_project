@@ -3,19 +3,20 @@
     height: 100%
 }
 .list{
-    width: 90%;
     margin: 50rpx auto;
 }
 .item{
-    margin: 30rpx auto;
+    margin:0 auto;
     display: flex;
+    width: 90%;
     flex-flow: row;
+    height: 80rpx;
+    line-height: 80rpx;
 }
 .time{
     margin-left: 10rpx;
     font-size: 10px;
     color:#2f99db; 
-    padding-top: 10rpx;
     width: 20%
 }
 .title{
@@ -24,5 +25,11 @@
     
 }
 .hr{
-    border-bottom: 1px dashed gainsboro
+    border-bottom: 1px dashed gainsboro;
+    width: 90%;
+     margin:0 auto;
+    
+}
+.hover_bg{
+    background-color: gainsboro;
 }

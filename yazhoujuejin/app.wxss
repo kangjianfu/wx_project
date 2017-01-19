@@ -14,3 +14,6 @@ page {
   font-family: 黑体,宋体;
   font-size: 14px
 }
+.hover_class{
+  background-color: gainsboro;
+}

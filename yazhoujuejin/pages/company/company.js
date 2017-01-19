@@ -3,7 +3,6 @@ Page({
   data:{},
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    console.info(options)
   },
   onReady:function(){
     // 页面渲染完成
@@ -23,5 +22,17 @@ Page({
     wx.removeStorageSync('customer_base_info')
     var customer_base_info1=wx.getStorageSync('customer_base_info')
     console.info("情况完缓存............"+JSON.stringify(customer_base_info1))
+  },
+  show_yyzz:function(e){
+    wx.previewImage({
+      current: 'https://www.yazhoujuejin.com/images/yyzz_wx.jpg', // 当前显示图片的http链接
+      urls: ["https://www.yazhoujuejin.com/images/yyzz_wx.jpg"] // 需要预览的图片http链接列表
+    })
+  },
+  show_smpz:function(e){
+    wx.previewImage({
+      current: 'https://www.yazhoujuejin.com/images/smpz.png', // 当前显示图片的http链接
+      urls: ["https://www.yazhoujuejin.com/images/smpz.png"] // 需要预览的图片http链接列表
+    })
   }
 })

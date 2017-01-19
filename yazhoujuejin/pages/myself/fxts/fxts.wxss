@@ -1,0 +1,30 @@
+/* pages/myself/fxts/fxts.wxss */
+
+.content {
+  font-size: 14px;
+  width: 90%;
+  margin: 20rpx auto;
+}
+
+.head_wz {
+  color: red;
+  width: 90%;
+  line-height: 60rpx;
+  height: 60rpx;
+  margin: 0 auto;
+}
+
+.head {
+  background-color: gainsboro;
+  font-size: 12px;
+  width: 100%;
+}
+
+.title{
+     margin: 0 auto;
+     text-align: center;
+     font-size: 16px;
+     font-weight: bold;
+     height: 50rpx;
+     line-height: 50rpx;
+}

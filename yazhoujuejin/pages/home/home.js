@@ -6,6 +6,7 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000,
+    hover:true,
     mode:"center",
     flush:false,
     products:[]
@@ -31,6 +32,7 @@ Page({
     //下拉刷新,
     var that=this;
     that.setData({flush:true})
+    that.setData({hidden:false})
     init_product(that);
   },
   go_company:function(){
@@ -64,6 +66,7 @@ var init_product=function(that){
       success: function(res){
         if(that.data.flush){
           wx.stopPullDownRefresh();
+          that.setData({hidden:true})
         }
         if(res.data.ret==0){
           for(var i in res.data.rows ){
