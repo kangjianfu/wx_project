@@ -16,7 +16,7 @@
   <view class="btn_view">
     <button 
     class='login_btn' type="default"  class="submit_btn"  
-     hover-class="login_hover" size="default" loading="{{loading_sub}}" plain="{{plain}}" 
+     hover-class="hover_send" size="default" loading="{{loading_sub}}" plain="{{plain}}" 
      disabled="{{disabled_sub}}" bindtap="submit"> 提 交 
      </button>
   </view>

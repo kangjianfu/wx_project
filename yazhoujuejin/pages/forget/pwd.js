@@ -137,12 +137,14 @@ var submit_btn=function(that){
     var code=that.data.code;
     var pwd=that.data.pwd;
     var send_flag=that.data.send_flag;
+    that.setData({loading_sub:true})
     if(send_flag){
       wx.showToast({
         title: '验证码已过期',
         icon: 'success',
         duration: 2000
         })
+        that.setData({loading_sub:false})
         return;
     }
     if(code.length!=6){
@@ -151,6 +153,7 @@ var submit_btn=function(that){
         icon: 'success',
         duration: 2000
         })
+         that.setData({loading_sub:false})
         return;
     }
     wx.request({
@@ -171,6 +174,7 @@ var submit_btn=function(that){
             }
           })
         }else{
+           that.setData({loading_sub:false})
           wx.showToast({
               title: res.data.msg,
               icon: 'success',

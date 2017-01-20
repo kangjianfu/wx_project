@@ -37,17 +37,21 @@ Page({
     })
   },
   login:function(){
+
     var that=this;
     var phone=this.data.phone;
     var pwd=this.data.pwd;
+    that.setData({"loading":true})
     if(phone==0){
       wx.showModal({
       showCancel:false,
       content: '手机号码格式不正确',
       })
+       that.setData({"loading":false})
       return;
     }
     if(pwd==0){
+      that.setData({"loading":false})
       wx.showModal({
       showCancel:false,
       content: '密码格式不正确',
@@ -93,7 +97,6 @@ var login=function(that){
     },
     method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
     success: function(res){
-      console.info(res)
      if(res.data.ret==0){
        var customer=res.data.obj
        customer.openid=wx_openid;
@@ -122,20 +125,8 @@ var login=function(that){
         showCancel:false,
         content: res.data.msg,
       })
+       that.setData({"loading":false})
      }
-    },
-    fail: function(e) {
-        // wx.redirectTo({
-        //   url: '../index/index',
-        //   success: function(res){
-        //       wx.showToast({
-        //       title: '网络异常',
-        //       icon: 'loading',
-        //       duration: 2000
-        //       })
-        //   }
-        // })
-        console.info(e)
     }
   })
 }

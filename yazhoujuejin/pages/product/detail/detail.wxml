@@ -1,40 +1,68 @@
+
 <!--pages/product/product/detail.wxml-->
 <view class="content">
-    <view class="detail">
-        <view class="name">
-            <text>{{detail.name}}</text>
-        </view>
-        <view class="row">
-            <view><text class="th">单位净值：</text><text class="number">{{detail.current_net_worth}}</text></view>
-            <view><text class="th">累计净值：</text><text class="number" >{{detail.accumulate_income}}</text></view>
-        </view>
-        <view class="row">
-            <view><text class="th">起投金额：</text><text class="number">{{detail.subscription_money>=10000?detail.subscription_money/1000 +"万":detail.subscription_money}}</text></view>
-              <view><text class="th">封闭期:</text><text>{{detail.sealing_time +"个月"}}</text></view>
-        </view>
-        <view class="row">
-            <view class="tr"><text class="th">开放日：</text><text>{{detail.open_date}}</text></view>
-        </view>
-        <view class="row">
-            <view class="tr"><text class="th">基金管理人：</text><text>{{detail.fund_manage}}</text></view>
-        </view>
-        <view class="row">
-            <view><text class="th">成立日期：</text><text>{{detail.create_time}}</text></view>
-            <view><text class="th">发布日期：</text><text>{{detail.publish_start_time}}</text></view>
-        </view>
-            <view class="ht" bindtap='open_ht' id="{{detail.contract_url}}" >
-             <image src="../../../static/images/ht.png" class='ht_tp'></image>
-                <view class="ht_wz"> <text>查看{{detail.name}}合同范本</text></view>
-            </view>
-
+  <view class="detail">
+    <view class="name">
+      <text>{{detail.name}}</text>
     </view>
-<view class="btn_view">
-    <button type="default" size="default" disabled="{{distabled}}" hover-class="btn_hover" class="btn"  loading="{{loading}}"  bindtap="ljyy"> {{btn_text}} </button>
+    <view class="row">
+      <view>
+        <text class="th">单位净值：</text>
+        <text class="number">{{detail.current_net_worth}}</text>
+      </view>
+      <view>
+        <text class="th">累计净值：</text>
+        <text class="number">{{detail.accumulate_income}}</text>
+      </view>
+    </view>
+    <view class="row">
+      <view>
+        <text class="th">起投金额：</text>
+        <text class="number">{{detail.subscription_money>=10000?detail.subscription_money/1000 +"万":detail.subscription_money}}</text>
+      </view>
+      <view>
+        <text class="th">封闭期:</text>
+        <text>{{detail.sealing_time +"个月"}}</text>
+      </view>
+    </view>
+    <view class="row">
+      <view class="tr">
+        <text class="th">开放日：</text>
+        <text>{{detail.open_date}}</text>
+      </view>
+    </view>
+    <view class="row">
+      <view class="tr">
+        <text class="th">基金管理人：</text>
+        <text>{{detail.fund_manage}}</text>
+      </view>
+    </view>
+    <view class="row">
+      <view>
+        <text class="th">成立日期：</text>
+        <text>{{detail.create_time}}</text>
+      </view>
+      <view>
+        <text class="th">更新日期：</text>
+        <text>{{detail.update_time}}</text>
+      </view>
+    </view>
+    <view class="row">
+            <view class="tr"><text class="th">说明描述：</text><text>{{detail.description}}</text></view>
+        </view>
+    <view class="ht" bindtap='open_ht' id="{{detail.contract_url}}">
+      <image src="../../../static/images/ht.png" class='ht_tp'></image>
+      <view class="ht_wz">
+        <text>查看{{detail.name}}合同范本</text>
+      </view>
+    </view>
+  </view>
+  <view class="btn_view">
+    <button type="default" size="default" disabled="{{distabled}}" hover-class="btn_hover" class="btn" loading="{{loading}}" bindtap="ljyy"> {{btn_text}} </button>
+  </view>
 </view>
-</view>
-
 <view>
- <loading hidden="{{hidden}}" bindchange="loadingChange">
+  <loading hidden="{{hidden}}" bindchange="loadingChange">
     {{loading_text}}
   </loading>
-  </view>
+</view>

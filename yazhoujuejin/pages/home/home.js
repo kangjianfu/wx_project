@@ -17,6 +17,7 @@ Page({
   onReady:function(){
     // 页面渲染完成
     this.setData({hidden:true})
+     
   },
   onShow:function(){
     // 页面显示
@@ -28,11 +29,23 @@ Page({
   onUnload:function(){
     // 页面关闭
   },
+  onShareAppMessage: function () {
+    return {
+      title: '亚洲掘金',
+      desc: '亚洲掘金',
+      path: '/page/home/home'
+    }
+  },
   onPullDownRefresh:function(){
     //下拉刷新,
     var that=this;
     that.setData({flush:true})
     that.setData({hidden:false})
+    wx.showToast({
+    title:"加载中...",
+    icon: 'loading',
+    duration: 8000
+    })
     init_product(that);
   },
   go_company:function(){
@@ -67,12 +80,13 @@ var init_product=function(that){
         if(that.data.flush){
           wx.stopPullDownRefresh();
           that.setData({hidden:true})
+          wx.hideToast()
         }
         if(res.data.ret==0){
           for(var i in res.data.rows ){
             var product=res.data.rows[i]
             product.create_time=product.create_time.substring(0,product.create_time.indexOf('T'));
-            product.update_time=product.create_time.substring(0,product.update_time.indexOf('T'));
+            product.update_time=product.update_time.substring(0,product.update_time.indexOf('T'));
           }
           that.setData({products:res.data.rows});
         }else{

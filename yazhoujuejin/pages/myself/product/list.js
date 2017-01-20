@@ -48,7 +48,7 @@ var init_product=function(that){
           for(var i in res.data.rows ){
             var product=res.data.rows[i]
             product.create_time=product.create_time.substring(0,product.create_time.indexOf('T'));
-            product.update_time=product.create_time.substring(0,product.update_time.indexOf('T'));
+            product.update_time=product.update_time.substring(0,product.update_time.indexOf('T'));
           }
           that.setData({products:res.data.rows});
           wx.hideToast()

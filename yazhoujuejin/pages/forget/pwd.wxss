@@ -6,7 +6,7 @@
    display: flex;
    flex-flow: row;
    margin: auto;
-   width: 95%
+   width: 90%
 }
 .phone>input{
     width: 62.5%;
@@ -20,16 +20,16 @@
 .section{
     margin: 30rpx auto;
     border-bottom: 1px solid #ccc;
-    width: 95%
+    width: 90%
 }
 .btn_view{
-    width: 95%;
+    width: 90%;
     margin: auto
 }
 .hover_send{
     background-color: #F29F3F;
 }
 .submit_btn{
-    background-color: #204f9d;
- color: white
+    background-color: #FFCE00;
+    color: white
 }

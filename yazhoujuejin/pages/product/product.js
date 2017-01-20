@@ -13,6 +13,7 @@ Page({
   onReady:function(){
     // 页面渲染完成
     this.setData({hidden:true})
+    //wx.hideToast()
   },
   onShow:function(){
     // 页面显示
@@ -26,6 +27,11 @@ Page({
   var that=this;
   that.setData({flush:true})
   that.setData({hidden:false})
+   wx.showToast({
+    title:"加载中...",
+    icon: 'loading',
+    duration: 8000
+    })
    home.init_product(that);
   },
   onUnload:function(){

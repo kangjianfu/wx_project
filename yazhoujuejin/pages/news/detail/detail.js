@@ -44,7 +44,6 @@ var format_html=function(id,that){
                 image_url.push(imgs[i].substr(0, indx))
               } else {
                 var d = imgs[i].replace(/&nbsp;/g, "").replace(/<p>/g, "").replace(/<\/p>/g, "").replace(/<br\/>/g, "");
-
                 if (d) {
                   that.setData({ content: d })
                   that.setData({ is_text: true })
@@ -54,6 +53,7 @@ var format_html=function(id,that){
             }
             that.setData({ images: image_url })
           }
+          console.info(that.data)
           that.setData({ hidden: true })
         } else {
           wx.switchTab({

@@ -1,14 +1,10 @@
 /* pages/login/login.wxss */
 .content{
-    width: 98%;
+    width: 90%;
     margin: auto;
     height: 100%;
     display: flex;
     flex-direction: column;
-}
-.section >button{
-    width: 95%;
-    margin: auto;
 }
 
 .login_btn{
@@ -34,29 +30,49 @@
     border-bottom: 1px #ccc solid
 }
 .section{
-    width: 95%;
-    margin: auto;
-    margin-top: 30rpx;
+    margin: 50rpx auto ;
+    font-size: 16px;
 }
 .login_hover {
   background-color: #F29F3F;
 }
 .btn_view{
-    margin-top: 40rpx;
-    margin-bottom: 35rpx
+    margin-top: 80rpx;
 }
 .regist_or_forget{
     height: 30rpx;
     line-height: 30rpx;
     font-size: 14px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 20px;
+    width: 100%;
+    margin: 30px auto;
 }
-.pull_left{
-    float: left;
-    background-color: #52c3dd;
-    color: white;
+.wjmm{
+    width: 48%;
+    text-align: right;
+    position: relative;
 }
-.pull_right{
-    float: right;
-    color: white;
-    background-color: #204f9d;
+.wjmm >view{
+    position: absolute;
+    right: 2px;
+}
+.ljzc{
+    width: 48%;
+    position: relative;
+    
+}
+.ljzc >view{
+    left: 2px;
+    position: absolute;
+}
+.sx{
+    width: 4%;
+     text-align: center;
+}
+
+.hovered{
+    background-color: gainsboro;
 }

@@ -9,6 +9,7 @@
       <block wx:for="{{images}}" wx:key="{{item}}">
         <image src="{{item}}" mode="scaleToFill" style="width:370px;height:540px" ></image>
       </block>
+       <!--<image src="https://static.yazhoujuejin.com/20161207.jpg" mode="scaleToFill" style="width:370px;height:540px" ></image>-->
     </view>
 
   <view class="body-view">

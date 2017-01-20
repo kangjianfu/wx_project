@@ -31,10 +31,16 @@
    
     width: 100%;
 }
-.btn >button{
-    border-radius: 0px;
-    background-color: #0d3d58;
-}
 .zanwei{
     height: 80px;
+}
+button{
+    border: 0px;
+    border-radius: 0px;
+    background-color: #FFCE00;
+    color: white
+}
+
+.btn_hover {
+  background-color: #F29F3F;
 }

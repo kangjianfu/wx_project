@@ -7,3 +7,6 @@
 .vi{
     margin-top: 30rpx;
 }
+.kong{
+   height: 100rpx;
+}

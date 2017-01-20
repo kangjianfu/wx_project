@@ -111,6 +111,7 @@ var open_doc=function(that,url){
                     }
                   })
               },fail:function(e){
+                console.info(e);
                wx.showToast({
                   title: '网络异常，文件下载失败。',
                   icon: 'success',

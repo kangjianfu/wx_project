@@ -1,27 +1,21 @@
-
 <view class="content">
-<view class="logo">
+  <view class="logo">
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+      <input name="input" placeholder="手机号" type="number" bindinput="phone_input" class="phone" maxlength="11" />
+    </view>
+    <view class="section">
+      <input name="input" placeholder="6-20位密码" type="text" bindinput="pwd_input" maxlength="20" class="phone" password="true" />
+    </view>
+    <view class="btn_view">
+      <button class='login_btn' type="default" class="login_btn" hover-class="login_hover" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login"> 登 录
+      </button>
+    </view>
+  </form>
 </view>
-
-<form bindsubmit="formSubmit" bindreset="formReset" >
-   <view class="section">
-    <input name="input" placeholder="手机号" type="number" bindinput="phone_input" class="phone" maxlength="11" />
-  </view>
-   <view class="section">
-    <input name="input" placeholder="6-20位密码" type="text"  bindinput="pwd_input"  maxlength="20" class="phone" password="true" />
-  </view>
-
-  <view class="btn_view">
-    <button 
-    class='login_btn' type="default"  class="login_btn"  
-     hover-class="login_hover" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" 
-     disabled="{{disabled}}" bindtap="login"> 登 录 
-     </button>
-  </view>
-</form>
-   <view class="regist_or_forget">
-     <button type="default" size="mini" bindtap="edit_pwd" class="pull_left" plain="{{plain}}" >忘记密码?</button>
-     <button type="default" size="mini" bindtap="register" class="pull_right" plain="{{plain}}" >立即注册</button>
-     </view>
-
+<view class="regist_or_forget">
+  <view class='wjmm' bindtap="edit_pwd" > <view hover="true" hover-class="hovered">忘记密码?</view></view>
+  <view class="sx"> | </view>
+  <view class='ljzc' bindtap="register"><view hover="true" hover-class="hovered">立即注册</view> </view>
 </view>

@@ -79,7 +79,7 @@ var inint_data = function (that, id) {
 var submit_form=function(data,that){
   var customer=wx.getStorageSync('customer_base_info').customer;
   that.setData({loading:true})
-  data["update_time"]=that.data.date;
+  data["update_time"]=that.data.date+" 16:18:18";
   data.customer_id=customer.id;
   data.product_id=that.data.product.id;
   wx.request({

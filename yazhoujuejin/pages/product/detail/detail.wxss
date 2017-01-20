@@ -29,10 +29,10 @@
     width: 50%;
 }
 .th{
-    font-size: 15px;
+    font-size: 14px;
 }
 .number{
-    font-size: 18px;
+    font-size: 16px;
     color: darkorange;
 }
 .row .tr{

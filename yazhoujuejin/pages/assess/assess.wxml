@@ -262,5 +262,5 @@
 <view class="zanwei"></view>
 </view>
 <view class="btn">
-    <button type="primary" size="default"  disabled="{{disabled}}" loading="{{loading}}"  bindtap="submit"> 提交 </button>
+    <button type="default" size="default"  disabled="{{disabled}}" loading="{{loading}}"  hover-class="btn_hover" bindtap="submit"> 提交 </button>
 </view>

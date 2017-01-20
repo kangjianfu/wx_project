@@ -1,6 +1,6 @@
 //app.js
 App({
-  server_url:"https://api.5ipsp.com",
+  server_url:"https://login.yazhoujuejin.com",
   onLaunch: function () {
     try{
        var customer_base_info=wx.getStorageSync('customer_base_info')

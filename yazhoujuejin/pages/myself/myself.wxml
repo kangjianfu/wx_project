@@ -74,7 +74,7 @@
       </view>
     </view>
   </view>
-
+  <block wx:if="{{customer.type==9}}">
   <view class="item" hover="true" hover-class="hover_bg" bindtap="sys_seting">
     <view class="info">
       <view class="row">
@@ -86,6 +86,7 @@
       </view>
     </view>
   </view>
+  </block>
 
 
 

@@ -10,7 +10,8 @@ Page({
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-
+    var customer=wx.getStorageSync('customer_base_info').customer;
+    this.setData({customer:customer})
  
   },
   onReady:function(){
@@ -34,7 +35,7 @@ Page({
     //联系我们
       wx.showActionSheet({
       itemList: ['010-56241848'],
-      itemColor:'#204F9D',
+      itemColor:'#e10500',
       success: function(res) {
           if(res.tapIndex>=0){
             wx.makePhoneCall({
@@ -89,7 +90,7 @@ Page({
     //系统配置
      wx.showActionSheet({
       itemList: [item_1_name,item_2_name],
-      itemColor:'#13227a',
+      itemColor:'#e10500',
       success: function(res) {
           console.info(res.tapIndex)
           if(res.tapIndex==0){
