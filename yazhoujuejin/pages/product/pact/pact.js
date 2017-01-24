@@ -23,7 +23,7 @@ Page({
   },
   onReady: function () {
     // 页面渲染完成
-    this.setData({hidden:true})
+    this.setData({ hidden: true })
   },
   onShow: function () {
     // 页面显示
@@ -39,7 +39,7 @@ Page({
     this.setData({ loading: !this.data.loading })
     var lxr = this.data.lxr;
     var phone = this.data.phone
-    var that=this;
+    var that = this;
     if (lxr == 0) {
       wx.showModal({
         showCancel: false,
@@ -58,6 +58,11 @@ Page({
     }
     var customer_id = wx.getStorageSync('customer_base_info').customer.id;
     var product_id = this.data.product.id;
+    wx.showToast({
+      title: '提交中',
+      icon: 'loading',
+      duration: 5000
+    })
     wx.request({
       url: app.server_url + '/prod_pact/add/pact/item',
       data: {
@@ -79,11 +84,12 @@ Page({
                 icon: 'success',
                 duration: 2000
               })
-            },fail:function(e){
-              console.info(e);
+            }, fail: function (e) {
+
             }
           })
         } else {
+          wx.hideToast();
           wx.showToast({
             title: res.data.msg,
             icon: 'success',
@@ -111,9 +117,9 @@ Page({
       this.setData({ phone: 0 });
     }
   },
-  check_desc:function(e){
-     var desc = e.detail.value;
-     this.setData({desc:desc})
+  check_desc: function (e) {
+    var desc = e.detail.value;
+    this.setData({ desc: desc })
   },
   onUnload: function () {
     // 页面关闭

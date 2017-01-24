@@ -1,23 +1,21 @@
 <view class="content">
   <view class="product_name">{{product.name}}</view>
   <view class="form">
+  <view class="hr"></view>
     <view class="row">
       <input placeholder="联系人(必填)" type="text" maxlength="20" bindinput="check_lxr" class="inpt" />
     </view>
+    <view class="hr"></view>
     <view class="row">
       <input placeholder="联系电话(必填)" type="number" maxlength="11"  bindinput="check_phone" class="inpt" />
     </view>
+    <view class="hr"></view>
     <view class="row">
-      <textarea placeholder="预约备注(可填)" auto-focus class="desc"  bindinput="check_desc"  />
+      <textarea placeholder="预约备注(可填)"  class="desc"  bindinput="check_desc"  />
     </view>
+    <view class="hr"></view>
   </view>
   <view class="btn_view">
     <button type="default" size="default" disabled="{{distabled}}" class="btn" loading="{{loading}}" bindtap="ljyy"> {{btn_text}} </button>
   </view>
 </view>
-
-<view>
- <loading hidden="{{hidden}}" bindchange="loadingChange">
-    加载中...
-  </loading>
-  </view>

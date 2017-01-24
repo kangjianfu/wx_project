@@ -16,14 +16,17 @@
      border-right:1rpx solid  #ccc ;
 }
 .btn-area{
-    margin-top: 50rpx;
+    width: 90%;
+    margin: 50rpx auto 0;
+  
 }
 .btn{
     background-color: #FFCE00;
     color: white;
 }
 .btn_hover{
-    background-color: #F29F3F
+    background-color: #F29F3F;
+
 }
 .hr{
     height: 5rpx;
