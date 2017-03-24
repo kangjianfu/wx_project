@@ -5,14 +5,14 @@
       <label for="current_net_worth">
         当前净值
       </label>
-      <input type="digit" id="current_net_worth" name="current_net_worth" class="input" placeholder="当前净值" value="{{product.current_net_worth}}" />
+      <input type="digit" id="current_ratio" name="current_ratio" class="input" placeholder="当前净值" value="{{product.current_ratio}}" />
     </view>
     <view class="hr"></view>
     <view class="row">
       <label for="accumulate_income">
         累计净值
       </label>
-      <input type="digit" id="accumulate_income" name="accumulate_income" class="input" placeholder="累计净值" value="{{product.current_net_worth}}" />
+      <input type="digit" id="total_ratio" name="total_ratio" class="input" placeholder="累计净值" value="{{product.total_ratio}}" />
     </view>
     <view class="hr"></view>
     <view class="row">
@@ -27,7 +27,7 @@
     <view class="hr"></view>
     <view class="row">
       <label for="description">
-        描述说明
+        更新说明
       </label>
       <view class="desc">
         <textarea id="description" class="description" name="description" auto-height placeholder="净值说明" value=" {{product.description}}" />

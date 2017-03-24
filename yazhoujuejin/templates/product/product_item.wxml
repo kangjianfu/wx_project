@@ -5,10 +5,14 @@
             <text>{{item.name}}</text>
         </view>
         <view class="row">
-            <view><text class="th">单位净值：</text><text class="number">{{item.current_net_worth}}</text></view>
-            <view><text class="th">累计净值：</text><text class="number" >{{item.accumulate_income}}</text></view>
+            <view><text class="th">单位净值：</text><text class="number">{{item.current_ratio}}</text></view>
+            <view><text class="th">累计净值：</text><text class="number" >{{item.total_ratio}}</text></view>
         </view>
-        <view class="row">
+        <view class="row" wx:if="{{item.status=='预约中'}}">
+            <view><text class="th">产品状态：</text><text style='color:red'>{{item.status}}</text></view>
+            <view><text class="th">成立日期：</text><text>{{item.create_time}}</text></view>
+        </view>
+        <view class="row" wx:if="{{item.status!='预约中'}}">
             <view><text class="th">成立日期：</text><text>{{item.create_time}}</text></view>
             <view><text class="th">更新日期：</text><text>{{item.update_time}}</text></view>
         </view>

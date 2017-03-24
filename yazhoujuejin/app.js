@@ -1,6 +1,8 @@
 //app.js
 App({
   server_url:"https://login.yazhoujuejin.com",
+  //restful_url:"https://api.5ipsp.com",
+  restful_url:"https://login.yazhoujuejin.com",
   onLaunch: function () {
     try{
        var customer_base_info=wx.getStorageSync('customer_base_info')
@@ -22,6 +24,7 @@ App({
         success: function (res) {
           wx.getUserInfo({
             success: function (res) {
+              console.info(res)
               that.globalData.userInfo = res.userInfo
               typeof cb == "function" && cb(that.globalData.userInfo)
             }
@@ -37,10 +40,12 @@ App({
     wx.login({
       success: function(res){
         var code=res.code;
-        if(res.code){
-          wx.request({
-            url: app.server_url+'/weixin/get/openid/'+code,
-            method: 'GET',
+        if(code){
+           wx.request({
+            url: app.restful_url+'/restful/weixin/getOpenid',
+            method: 'POST',
+             data: {'code':code},
+             header: {'content-type':'application/x-www-form-urlencoded'}, // 设置请求的 header
             success: function(res){
               if(res.statusCode==200){
                 wx.setStorageSync('customer_base_info',{openid:res.data.openid})

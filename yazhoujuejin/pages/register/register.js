@@ -62,11 +62,13 @@ var check_phone=function(e,that){
    var phone=e.detail.value;
     var l=phone.length;
     var reg=/^1[3|4|5|7|8][0-9]\d{8}$/;
+    var send_flag=that.data.send_flag;
+    console.info(send_flag);
     if(l<11){
       that.setData({disabled:true});
       that.setData({disabled_sub:true});
       that.setData({phone:0})
-    }else{
+    }else{ 
       if(reg.test(phone)&&that.data.send_flag){
           that.setData({disabled:false})
           that.setData({phone:phone})
@@ -81,17 +83,19 @@ var check_phone=function(e,that){
 }
 
 
-//发送修改密码验证码
+//发送验证码
 var send_code=function(that){
  var phone=that.data.phone;
  that.setData({loading:!that.data.loading})
  that.setData({disabled:!that.data.disabled});
   if(phone){
         wx.request({
-        url: app.server_url+'/login/send/register/code/'+phone,
-        method: 'GET', 
+        //url: app.server_url+'/login/send/register/code/'+phone,
+        url:app.restful_url+'/restful/login/sendCode4Register/'+phone,
+        header: {'content-type':'application/x-www-form-urlencoded'},
+        method: 'POST', 
         success: function(res){
-          if(res.data.ret==0){
+          if(res.data.ret){
             that.setData({send_flag:false});
             that.setData({loading:!that.data.loading})
             var time=120;
@@ -106,14 +110,13 @@ var send_code=function(that){
               }
              },1000)
           }else{
-            this.setData({send_flag:false});
               wx.showToast({
               title: '手机号已注册',
               icon: 'success',
               duration: 1500,
               success:function(){
                 that.setData({loading:!that.data.loading})
-                that.setData({disabled:!that.data.disabled});
+                that.setData({disabled:true});
                 }
               })
           }
@@ -127,7 +130,7 @@ var send_code=function(that){
         }
       })
     }else{
-      that.setData({loading:!this.data.loading})
+      that.setData({loading:!that.data.loading})
       that.setData({disabled:!that.data.disabled});
     }
 }
@@ -148,7 +151,7 @@ var submit_btn=function(that){
         that.setData({loading_sub:false})
         return;
     }
-    if(code.length!=6){
+    if(code.length<=3){
       wx.showToast({
         title: '验证码格式错误',
         icon: 'success',
@@ -158,12 +161,13 @@ var submit_btn=function(that){
         return;
     }
     wx.request({
-      url: app.server_url+'/login/register/'+phone,
-      data: {code:code,password:pwd},
+      //url: app.server_url+'/login/register/'+phone,
+      url:app.restful_url+'/restful/login/register/'+phone,
+      data: {code:code,password:pwd,source:'WX_APP'},
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {'content-type':'application/x-www-form-urlencoded'},
       success: function(res){
-        console.info(res.data)
-        if(res.data.ret==0){
+        if(res.data.ret){
           wx.redirectTo({
             url: '../login/login',
             success: function(res){

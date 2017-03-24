@@ -7,7 +7,7 @@
     margin: 50rpx auto
 }
 .name{
-    font-size: 18px;
+    font-size: 32rpx;
 }
 
 .btn_view{
@@ -29,10 +29,10 @@
     width: 50%;
 }
 .th{
-    font-size: 14px;
+    font-size: 28rpx;
 }
 .number{
-    font-size: 16px;
+    font-size: 32rpx;
     color: darkorange;
 }
 .row .tr{
@@ -41,7 +41,7 @@
 .ht{
     color:#13227a; 
     height: 64rpx;
-    font-size: 12px;
+    font-size: 24rpx;
     display: flex;
     flex-flow: row;
     margin-top: 50rpx;

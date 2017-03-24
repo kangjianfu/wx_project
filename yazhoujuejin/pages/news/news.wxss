@@ -15,12 +15,12 @@
 }
 .time{
     margin-left: 10rpx;
-    font-size: 10px;
+    font-size: 20rpx;
     color:#2f99db; 
     width: 20%
 }
 .title{
-    font-size: 14px;
+    font-size: 28rpx;
     width: 80%;
     
 }

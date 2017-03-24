@@ -4,15 +4,14 @@
     font-family: 黑体,宋体;
     font-size: 14px;
 }
+
 .swp{
-    height: 230px;
+    height: 400rpx;
 }
-.item1{
-    height: 230px;
-    background-image: url('http://img.5ipsp.com/logo/banner_01.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; 
+
+swiper-item image{
+    width: 100%;
+    height: 100%
 }
 .selection{
     margin-top: 50rpx;
@@ -36,14 +35,16 @@
 }
 .hr{
     height: 5rpx;
-    background: gainsboro;
     margin: 30rpx 0;
+    border-bottom: 1px dashed gainsboro;
 }
 
 .qjcp{
     line-height: 42rpx;
     width: 90%;
-    margin: 20rpx auto
+    margin: 1rpx auto;
+    margin-top: 40rpx;
+    margin-bottom: 20rpx
 }
 .title{
     display: flex;
@@ -77,9 +78,13 @@
     width: 50%;
 }
 .th{
-    font-size: 13px;
+    font-size: 26rpx;
 }
 .number{
-    font-size: 17px;
+    font-size: 34rpx;
     color: darkorange;
+}
+.small_gray_line{
+    height:1rpx;
+    border-bottom:1rpx solid #ccc
 }

@@ -86,10 +86,11 @@ var send_code=function(that){
  that.setData({disabled:!that.data.disabled});
   if(phone){
         wx.request({
-        url: app.server_url+'/login/send/edit/code/'+phone,
-        method: 'GET', 
+        //url: app.server_url+'/login/send/edit/code/'+phone,
+        url:app.restful_url+'/restful/login/sendCode4Pwd/'+phone,
+        method: 'POST', 
         success: function(res){
-          if(res.data.ret==0){
+          if(res.data.ret){
             that.setData({send_flag:false});
             that.setData({loading:!that.data.loading})
             var time=120;
@@ -147,7 +148,7 @@ var submit_btn=function(that){
         that.setData({loading_sub:false})
         return;
     }
-    if(code.length!=6){
+    if(code.length<=3){
       wx.showToast({
         title: '验证码格式错误',
         icon: 'success',
@@ -157,12 +158,13 @@ var submit_btn=function(that){
         return;
     }
     wx.request({
-      url: app.server_url+'/login/update/pwd/'+phone,
+      //url: app.server_url+'/login/update/pwd/'+phone,
+      url:app.restful_url+'/restful/login/updatePwd/'+phone,
       data: {code:code,password:pwd},
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {'content-type':'application/x-www-form-urlencoded'}, // 设置请求的 header
       success: function(res){
-        console.info(res.data)
-        if(res.data.ret==0){
+        if(res.data.ret){
           wx.redirectTo({
             url: '../login/login',
             success: function(res){

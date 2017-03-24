@@ -28,12 +28,13 @@ Page({
 
 var format_html=function(id,that){
    wx.request({
-      url: app.server_url + '/news/info/by/' + id,
-      data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
+      //url: app.server_url + '/news/info/by/' + id,
+      url:app.restful_url+'/restful/news/findById',
+      data: {news_id:id},
+      header: {'content-type':'application/x-www-form-urlencoded'},
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function (res) {
-        if (res.data.ret == 0) {
+        if (res.data.ret) {
           var image_url = []
           var content = res.data.obj.content
           var imgs = content.split("<img src=\"");
@@ -53,7 +54,7 @@ var format_html=function(id,that){
             }
             that.setData({ images: image_url })
           }
-          console.info(that.data)
+
           that.setData({ hidden: true })
         } else {
           wx.switchTab({

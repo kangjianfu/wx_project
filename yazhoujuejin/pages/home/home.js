@@ -9,9 +9,13 @@ Page({
     hover:true,
     mode:"center",
     flush:false,
+    imageUrls:[],
     products:[]
   },
   onLoad:function(options){
+    //初始化轮播图
+    init_lbt(this);
+    //初始化产品信息
      init_product(this);
   },
   onReady:function(){
@@ -33,7 +37,7 @@ Page({
     return {
       title: '亚洲掘金',
       desc: '亚洲掘金',
-      path: '/page/home/home'
+      path: '/pages/home/home'
     }
   },
   onPullDownRefresh:function(){
@@ -41,12 +45,12 @@ Page({
     var that=this;
     that.setData({flush:true})
     that.setData({hidden:false})
-    wx.showToast({
-    title:"加载中...",
-    icon: 'loading',
-    duration: 8000
-    })
     init_product(that);
+    wx.showToast({
+      title: '加载中......',
+      icon: 'loading',
+      duration: 5000
+    })
   },
   go_company:function(){
     wx.navigateTo({
@@ -72,21 +76,21 @@ Page({
 });
 var init_product=function(that){
     wx.request({
-      url: app.server_url+'/product/list',
+      //url: app.server_url+'/product/list',
+      url:app.restful_url+'/restful/product/list',
       data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {'content-type':'application/x-www-form-urlencoded'}, // 设置请求的 header
       success: function(res){
         if(that.data.flush){
           wx.stopPullDownRefresh();
-          that.setData({hidden:true})
           wx.hideToast()
         }
-        if(res.data.ret==0){
+        if(res.data){
           for(var i in res.data.rows ){
             var product=res.data.rows[i]
-            product.create_time=product.create_time.substring(0,product.create_time.indexOf('T'));
-            product.update_time=product.update_time.substring(0,product.update_time.indexOf('T'));
+            product.create_time=product.create_time.substring(0,product.create_time.indexOf(' '));
+            product.update_time=product.update_time.substring(0,product.update_time.indexOf(' '));
           }
           that.setData({products:res.data.rows});
         }else{
@@ -104,7 +108,29 @@ var init_product=function(that){
       }
     })
 }
-
+// 初始化轮播图
+var init_lbt=function(that){
+  wx.request({
+    url: app.restful_url+'/restful/files/list',
+    data: {'type':'SY_XLBT'},
+    method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+    header: {'content-type':'application/x-www-form-urlencoded'}, // 设置请求的 header
+    success: function(res){
+      var data_images=res.data.rows;
+      var images=[];
+      data_images.forEach(function(e){
+       that.data.imageUrls.push(app.restful_url+e.url)
+      })
+      that.setData({imageUrls:that.data.imageUrls});
+    },
+    fail: function() {
+      // fail
+    },
+    complete: function() {
+      // complete
+    }
+  })
+}
 module.exports = {
   init_product: init_product
 }

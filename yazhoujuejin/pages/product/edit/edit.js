@@ -1,5 +1,6 @@
 // pages/myself/product/edit/edit.js
 var app = getApp()
+var util=require('../../../utils/util.js')
 Page({
   data: {
     product: {},
@@ -9,6 +10,7 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
     var product_id = options.id;
     var that = this;
+    
     if(product_id){
       inint_data(that, product_id);
     }
@@ -39,56 +41,53 @@ Page({
   }
 })
 var inint_data = function (that, id) {
-  wx.showToast({
-    title: '加载中...',
-    icon: 'loading',
-    duration: 8000
-  })
-  wx.request({
-    url: app.server_url + '/product/info/by/' + id,
-    method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-    success: function (res) {
-      wx.hideToast()
-      if (res.data.ret == 0) {
-        var product=res.data.obj;
-        product.create_time=product.create_time.substring(0,product.create_time.indexOf('T'));
-        product.update_time=product.update_time.substring(0,product.update_time.indexOf('T'));
-        product.publish_start_time=product.publish_start_time.substring(0,product.publish_start_time.indexOf('T'));
-        that.setData({product: product})
-        that.setData({date:product.update_time})
-      } else {
-        wx.navigateBack()
-        wx.showToast({
-          title: '网络异常...',
-          icon: 'loading',
-          duration: 3000
-        })
+  let product=wx.getStorageSync('product_'+id);
+  let now=new Date();
+  let update_time=util.formatTime(now);
+  update_time=update_time.substring(0,update_time.indexOf(' '))
+  if(product){
+      that.setData({product: product})
+      that.setData({date:update_time})
+  }else{
+    wx.request({
+      url: app.restful_url + '/restful/product/findById/'+id,
+      data: {},
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      success: function(res){
+        if(res.data.ret){
+          let result=res.data.obj;
+          that.setData({product: result})
+          that.setData({date:update_time})
+          wx.setStorageSync("product_"+result.id, product);
+        }else{
+          wx.navigateBack()
+          wx.showToast({
+            title: '网络异常...',
+            icon: 'loading',
+            duration: 3000
+          })
+        }
       }
-    },
-    fail: function () {
-      wx.navigateBack()
-      wx.showToast({
-        title: '服务器异常...',
-        icon: 'loading',
-        duration: 5000
-      })
-    }
-  })
+    })
+  }
 }
 
 var submit_form=function(data,that){
   var customer=wx.getStorageSync('customer_base_info').customer;
   that.setData({loading:true})
   data["update_time"]=that.data.date+" 16:18:18";
-  data.customer_id=customer.id;
+  data.update_user=customer.id;
   data.product_id=that.data.product.id;
   wx.request({
-    url: app.server_url+'/product/wx/update/jzsm',
+    //url: app.server_url+'/product/wx/update/jzsm',
+    url:app.restful_url+'/restful/product/updateRatio',
     data: data,
+    header: {'content-type':'application/x-www-form-urlencoded'},
     method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
     success: function(res){
       that.setData({loading:false})
-      if(res.data.ret==0){
+      if(res.data.ret){
+        wx.removeStorageSync('product_'+data.product_id);
         wx.switchTab({
           url: '../../myself/myself',
           success: function(res){

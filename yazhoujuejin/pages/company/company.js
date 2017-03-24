@@ -1,4 +1,4 @@
-// pages/company/company.js
+var app = getApp()
 Page({
   data:{},
   onLoad:function(options){
@@ -24,15 +24,45 @@ Page({
     console.info("情况完缓存............"+JSON.stringify(customer_base_info1))
   },
   show_yyzz:function(e){
-    wx.previewImage({
-      current: 'https://www.yazhoujuejin.com/images/yyzz_wx.jpg', // 当前显示图片的http链接
-      urls: ["https://www.yazhoujuejin.com/images/yyzz_wx.jpg"] // 需要预览的图片http链接列表
+    wx.request({
+      url: app.restful_url+'/restful/files/list',
+      data: {'type':'YYZZ'},
+      header: {'content-type':'application/x-www-form-urlencoded'},
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      success: function(res){
+        if(res.data.ret){
+          wx.previewImage({
+            current: app.restful_url+res.data.rows[0].url, // 当前显示图片的http链接
+            urls: [app.restful_url+res.data.rows[0].url] // 需要预览的图片http链接列表
+          })
+        }else{
+          wx.showToast({
+            title: '网络异常',
+            icon: 'loading'
+            })
+        }
+      }
     })
   },
   show_smpz:function(e){
-    wx.previewImage({
-      current: 'https://www.yazhoujuejin.com/images/smpz.png', // 当前显示图片的http链接
-      urls: ["https://www.yazhoujuejin.com/images/smpz.png"] // 需要预览的图片http链接列表
+    wx.request({
+      url: app.restful_url+'/restful/files/list',
+      data: {'type':'SMPZ'},
+      header: {'content-type':'application/x-www-form-urlencoded'},
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      success: function(res){
+        if(res.data.ret){
+          wx.previewImage({
+            current: app.restful_url+res.data.rows[0].url, // 当前显示图片的http链接
+            urls: [app.restful_url+res.data.rows[0].url] // 需要预览的图片http链接列表
+          })
+        }else{
+          wx.showToast({
+            title: '网络异常',
+            icon: 'loading'
+            })
+        }
+      }
     })
   }
 })

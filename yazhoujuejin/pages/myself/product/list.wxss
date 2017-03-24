@@ -6,7 +6,7 @@
 }
 .name{
     margin: 50rpx 0;
-    font-size: 16px;
+    font-size: 32rpx;
     font-weight: bold;
     text-align: center
 }
@@ -14,7 +14,8 @@
     display: flex;
     flex-direction: row;
     margin: 30rpx auto;
-    font-size: 14px;
+    font-size: 28rpx;
+    width:90%;
 }
 .row >view{
     width: 50%;

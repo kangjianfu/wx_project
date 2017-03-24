@@ -29,7 +29,7 @@
   "tabBar": {
         "color": "#929292",
         "backgroundColor": "#ffffff",
-        "selectedColor": "#13227a",
+        "selectedColor": "#D81E06",
         "borderStyle": "black",
         "list": [
             {

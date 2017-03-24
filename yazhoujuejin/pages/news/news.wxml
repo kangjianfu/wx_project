@@ -9,18 +9,11 @@
             <text>{{item.title}}</text>
           </view>
           <view class="time">
-            <text>{{item.create_time}}</text>
+            <text>{{item.update_time}}</text>
           </view>
         </view>
-        <block wx:if="{{index!=news.length-1}}">
-          <view class="hr"></view>
-        </block>
+        <view class="hr"></view>
       </view>
     </block>
   </view>
-</view>
-<view>
-  <loading hidden="{{hidden}}" bindchange="loadingChange">
-    加载中...
-  </loading>
 </view>

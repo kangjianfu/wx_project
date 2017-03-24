@@ -1,5 +1,14 @@
 
 <!--pages/myself/product/list.wxml-->
+
+
+<view class="content">
+    <import src="../../../templates/product/product_item.wxml"/>
+    <template is="product_item" data="{{products: products}}"/>
+</view>
+
+
+<!--  
 <block wx:for="{{products}}" wx:key="{{item}}">
 <view class="content" hover="true" hover-class="hovered" bindtap="edit_product" id="{{item.id}}">
     <view class="item">
@@ -34,4 +43,4 @@
     </view>
       <view class="hr"></view>
 </view>
-</block>
+</block>-->

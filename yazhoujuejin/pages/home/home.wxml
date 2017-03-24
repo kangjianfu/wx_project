@@ -2,15 +2,12 @@
 <!--pages/home/home.wxml-->
 <view class="content">
   <swiper indicator-dots="{{indicatorDots}}" class="swp" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true" circular="true">
-    <swiper-item>
-      <view class="item1"></view>
-    </swiper-item>
-    <swiper-item>
-      <view class="item1"></view>
-    </swiper-item>
-    <swiper-item>
-      <view class="item1"></view>
-    </swiper-item>
+  <block wx:for="{{imageUrls}}" wx:key="item">
+      <swiper-item>
+        <image src="{{item}}" />
+      </swiper-item>
+    </block>
+
   </swiper>
   <view class="selection">
     <view bindtap="go_company">
@@ -26,7 +23,6 @@
       <text>加入我们</text>
     </view>
   </view>
-  <view class="hr"></view>
   <view class="qjcp">
     <view class="title">
       <image src="../../static/images/icon_4.png"></image>
@@ -34,11 +30,7 @@
     </view>
     </view>
     <import src="../../templates/product/product_item.wxml"/>
+    <view class='small_gray_line'></view>
     <template is="product_item" data="{{products: products}}"/>
 </view>
 
-<view>
- <loading hidden="{{hidden}}" bindchange="loadingChange">
-    加载中...
-  </loading>
-  </view>

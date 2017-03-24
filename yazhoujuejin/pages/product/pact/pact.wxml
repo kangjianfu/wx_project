@@ -3,15 +3,23 @@
   <view class="form">
   <view class="hr"></view>
     <view class="row">
-      <input placeholder="联系人(必填)" type="text" maxlength="20" bindinput="check_lxr" class="inpt" />
+     <view class='row1'>
+      <text class='title'>真实姓名：</text><input placeholder="真实姓名(必填)" type="text"  disabled="{{lxr_status}}" maxlength="20" bindinput="check_lxr" value='{{lxr_mc}}' class="inpt" />
+       </view>
+    </view>
+    <view class="hr"></view>
+
+    <view class="row">
+      <view class='row1'>
+        <text class='title'>预约金额：</text><input value="{{pact_money}}" placeholder-style="color:red" type="number" maxlength="6" bindblur="check_money" class="inpt" />   <text class='danwei' >  单位（万）</text>
+      </view>
+    
     </view>
     <view class="hr"></view>
     <view class="row">
-      <input placeholder="联系电话(必填)" type="number" maxlength="11"  bindinput="check_phone" class="inpt" />
-    </view>
-    <view class="hr"></view>
-    <view class="row">
+    <view class='desc_row'>
       <textarea placeholder="预约备注(可填)"  class="desc"  bindinput="check_desc"  />
+    </view>
     </view>
     <view class="hr"></view>
   </view>

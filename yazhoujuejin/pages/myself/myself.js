@@ -89,14 +89,14 @@ Page({
     }
     //系统配置
      wx.showActionSheet({
-      itemList: [item_1_name,item_2_name],
+      //itemList: [item_1_name,item_2_name],
+      itemList: [item_2_name],
       itemColor:'#e10500',
       success: function(res) {
-          console.info(res.tapIndex)
+          // if(res.tapIndex==0){
+          //     bind_wx()
+          // }
           if(res.tapIndex==0){
-              bind_wx()
-          }
-          if(res.tapIndex==1){
             wx.navigateTo({
               url: './product/list',
               fail:function(e){

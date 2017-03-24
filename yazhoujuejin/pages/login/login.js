@@ -37,7 +37,6 @@ Page({
     })
   },
   login:function(){
-
     var that=this;
     var phone=this.data.phone;
     var pwd=this.data.pwd;
@@ -81,28 +80,26 @@ Page({
 })
 
 // -- 提交按钮、
-
-
 var login=function(that){
   var customer_base_info=wx.getStorageSync('customer_base_info')
   var wx_openid=customer_base_info.openid;
-  console.info(customer_base_info.customer)
   let phone=that.data.phone, pwd=that.data.pwd;
   wx.request({
-    url: app.server_url+'/login/4/wx',
+    //url: app.server_url+'/login/4/wx',
+    url:app.restful_url+'/restful/login',
     data: {
       phone:phone,
-      password:pwd,
-      wx_openid:wx_openid
+      password:pwd
     },
+    header: {'content-type':'application/x-www-form-urlencoded'}, // 设置请求的 header
     method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
     success: function(res){
-     if(res.data.ret==0){
+     if(res.data.ret){
        var customer=res.data.obj
        customer.openid=wx_openid;
        customer_base_info.customer=customer;
        wx.setStorageSync('customer_base_info',customer_base_info);
-       if(customer.status==1){
+       if(customer.status==='未评估'){
           wx.redirectTo({
             url: '../assess/assess',
             success:function(){

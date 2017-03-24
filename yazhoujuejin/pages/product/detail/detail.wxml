@@ -8,27 +8,27 @@
     <view class="row">
       <view>
         <text class="th">单位净值：</text>
-        <text class="number">{{detail.current_net_worth}}</text>
+        <text class="number">{{detail.current_ratio}}</text>
       </view>
       <view>
         <text class="th">累计净值：</text>
-        <text class="number">{{detail.accumulate_income}}</text>
+        <text class="number">{{detail.total_ratio}}</text>
       </view>
     </view>
     <view class="row">
       <view>
         <text class="th">起投金额：</text>
-        <text class="number">{{detail.subscription_money>=10000?detail.subscription_money/1000 +"万":detail.subscription_money}}</text>
+        <text class="number">{{detail.start_buy_money>=10000?detail.start_buy_money/10000 +"万":detail.start_buy_money}}</text>
       </view>
       <view>
         <text class="th">封闭期:</text>
-        <text>{{detail.sealing_time +"个月"}}</text>
+        <text>{{detail.closed_time}}</text>
       </view>
     </view>
     <view class="row">
       <view class="tr">
         <text class="th">开放日：</text>
-        <text>{{detail.open_date}}</text>
+        <text>{{detail.opend_time}}</text>
       </view>
     </view>
     <view class="row">
@@ -37,7 +37,22 @@
         <text>{{detail.fund_manage}}</text>
       </view>
     </view>
-    <view class="row">
+    
+
+    <view class="row" wx:if="{{detail.status=='YYZ'}}">
+      <view class="tr">
+        <text class="th">产品状态：</text>
+        <text style='color:red'>{{detail.status=='YYZ'?'预约中':detail.status}}</text>
+      </view>
+    </view>
+
+    <view class="row" wx:if="{{detail.status=='YYZ'}}">
+      <view class="tr">
+        <text class="th">预约时间：</text>
+        <text>{{detail.start_make_time}} -到- {{detail.end_make_time}}</text>
+      </view>
+    </view>
+    <view class="row" wx:if="{{detail.status!='YYZ'}}" >
       <view>
         <text class="th">成立日期：</text>
         <text>{{detail.create_time}}</text>
@@ -47,9 +62,25 @@
         <text>{{detail.update_time}}</text>
       </view>
     </view>
-    <view class="row">
-            <view class="tr"><text class="th">说明描述：</text><text>{{detail.description}}</text></view>
+    
+    <view class="row" wx:if="{{detail.status=='YYZ'}}">
+      <view class="tr">
+        <view><text class="th">产品描述：</text></view>
+        <view style="width:100%;margin-top:20rpx;margin-left:2%;font-size:28rpx">
+          <text>{{detail.description}}</text>
         </view>
+      </view>
+    </view>
+
+    <view class="row" wx:if="{{detail.status!='YYZ'}}">
+      <view class="tr">
+        <view><text class="th">更新描述：</text>  <text>{{detail.update_description}}</text></view>
+        <!--<view style="width:100%;margin-top:20rpx;margin-left:2%;font-size:28rpx">
+          <text>{{detail.update_description}}</text>
+        </view>-->
+      </view>
+    </view>
+
     <view class="ht" bindtap='open_ht' id="{{detail.contract_url}}">
       <image src="../../../static/images/ht.png" class='ht_tp'></image>
       <view class="ht_wz">
@@ -60,9 +91,4 @@
   <view class="btn_view">
     <button type="default" size="default" disabled="{{distabled}}" hover-class="btn_hover" class="btn" loading="{{loading}}" bindtap="ljyy"> {{btn_text}} </button>
   </view>
-</view>
-<view>
-  <loading hidden="{{hidden}}" bindchange="loadingChange">
-    {{loading_text}}
-  </loading>
 </view>

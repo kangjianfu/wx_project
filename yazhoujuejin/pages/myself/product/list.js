@@ -19,7 +19,7 @@ Page({
   onHide:function(){
     // 页面隐藏
   },
-  edit_product:function(e){
+  show_product_detail:function(e){
     var id=e.currentTarget.id
     if(id){
        wx.navigateTo({
@@ -41,14 +41,17 @@ var showToast=function(msg,time){
 }
 var init_product=function(that){
      wx.request({
-      url: app.server_url+'/product/list',
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      //url: app.server_url+'/product/list',
+      url:app.restful_url+'/restful/product/list',
+      data: {status:'DCP,CPZ'},
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {'content-type':'application/x-www-form-urlencoded'}, // 设置请求的 header
       success: function(res){
-        if(res.data.ret==0){
+        if(res.data.ret){
           for(var i in res.data.rows ){
             var product=res.data.rows[i]
-            product.create_time=product.create_time.substring(0,product.create_time.indexOf('T'));
-            product.update_time=product.update_time.substring(0,product.update_time.indexOf('T'));
+            product.create_time=product.create_time.substring(0,product.create_time.indexOf(' '));
+            product.update_time=product.update_time.substring(0,product.update_time.indexOf(' '));
           }
           that.setData({products:res.data.rows});
           wx.hideToast()

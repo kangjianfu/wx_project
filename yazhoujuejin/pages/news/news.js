@@ -26,7 +26,6 @@ Page({
   },
   show_detail:function(e){
     var id=e.currentTarget.id;
-    console.info(id)
     wx.navigateTo({
       url: './detail/detail?id='+id
     })
@@ -35,18 +34,23 @@ Page({
 
 var init_page=function(that){
     wx.request({
-      url: app.server_url+'/news/list',
-      data: {page:that.data.currentPage,rows:10},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      //url: app.server_url+'/news/list',
+      url:app.restful_url+'/restful/news/list',
+      data: {page:that.data.currentPage,rows:20},
+      header: {'content-type':'application/x-www-form-urlencoded'},
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res){
-        if(res.data.ret==0){
+        if(res.data.ret){
           var news=res.data.rows;
           for(var i in news){
-            news[i].create_time=news[i].create_time.substring(0,news[i].create_time.indexOf('T'))
+            news[i].update_time=news[i].update_time.substring(0,news[i].update_time.indexOf(' '))
           }
           that.setData({news:news})
         }else{
-          console.info("网络异常")
+          wx.showToast({
+            title: '网络异常',
+            icon: 'loading'
+            })
         }
       }
     })

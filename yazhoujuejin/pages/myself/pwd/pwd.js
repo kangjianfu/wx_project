@@ -72,17 +72,18 @@ var update_pwd=function(that,e){
      var customer_id=wx.getStorageSync('customer_base_info').customer.id
      if(customer_id){
          wx.request({
-          url: app.server_url+'/customer/update/pwd',
+         // url: app.server_url+'/customer/update/pwd',
+          url:app.restful_url+'/restful/customer/updatePwd',
           data: {
             customer_id:customer_id,
             old_pwd:old_p,
             new_pwd:new_1,
           },
           method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-          // header: {}, // 设置请求的 header
+          header: {'content-type':'application/x-www-form-urlencoded'}, // 设置请求的 header
           success: function(res){
             that.setData({loading:false});
-            if(res.data.ret==0){
+            if(res.data.ret){
                 wx.switchTab({
                   url: '../myself',
                   success: function(){

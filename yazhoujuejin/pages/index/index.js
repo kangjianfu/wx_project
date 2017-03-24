@@ -60,7 +60,7 @@ function check_customer_status() {
   var customer_base_info = wx.getStorageSync('customer_base_info')
   var customer = customer_base_info.customer;
   if (customer) {
-    if (customer.status == 1) {
+    if (customer.status==='未评估') {
       wx.redirectTo({
         url: '../assess/assess',
         success: function () {
@@ -80,13 +80,15 @@ function check_customer_status() {
     var openid = customer_base_info.openid;
     if(openid){
         wx.request({
-        url: app.server_url + '/customer/info/by/openid/' + openid,
-        method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        url: app.restful_url + '/restful/customer/byOpenid',
+        method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        data: {'openid':openid},
+        header: {'content-type':'application/x-www-form-urlencoded'}, // 设置请求的 header
         success: function (res) {
-          if (res.data.ret == 0) {
+          if (res.data.ret) {
             customer_base_info.customer = res.data.obj;
             wx.setStorageSync('customer_base_info', customer_base_info)
-            if (res.data.obj.status == 1) {
+            if (res.data.obj.status ==='未评估') {
               wx.redirectTo({
                 url: '../assess/assess',
                 success: function () {
@@ -106,34 +108,7 @@ function check_customer_status() {
         }
       })
     }else{
-        wx.login({
-        success: function(res){
-          var code=res.code;
-          if(res.code){
-            wx.request({
-              url: app.server_url+'/weixin/get/openid/'+code,
-              method: 'GET',
-              success: function(res){
-                if(res.statusCode==200){
-                  wx.setStorageSync('customer_base_info',{openid:res.data.openid})
-                }
-              },
-              fail: function() {
-                // fail
-              },
-              complete: function() {
-                // complete
-              }
-            })
-          }
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      })
+      wx.show
     }
     
 

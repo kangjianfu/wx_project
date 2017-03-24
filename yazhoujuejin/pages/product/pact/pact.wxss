@@ -2,7 +2,7 @@
 
 .form {
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 32rpx;
 }
 
 .product_name {
@@ -11,22 +11,51 @@
   text-align: center;
 }
 
+.danwei {
+  width: 25%;
+  height: 2.0rem;
+  line-height: 2.0rem;
+  min-height: 2.0rem;
+  color: red;
+  text-align: center;
+}
+.title{
+  width: 25%;
+  height: 2.0rem;
+  line-height: 2.0rem;
+  min-height: 2.0rem;
+  text-align: right;
+}
 .inpt {
-  border-bottom: 1rpx solid #ccc;
-  font-size: 16px;
-  border-right: 1rpx solid #ccc;
+  border: 3rpx solid #888;
+  font-size: 32rpx;
+   height: 2.0rem;
+  line-height: 2.0rem;
+  min-height: 2.0rem;
+  width: 40%;
+  margin-left: 10rpx;
+  border-left: 3rpx solid #888;
+  padding-left:10rpx; 
 }
 
 .row {
   margin: 50rpx auto;
-  width: 90%;
-}
+  width: 100%;
 
+}
+.desc_row{
+   width: 92%;
+   margin: 0 auto;
+}
+.row1{
+  display: flex;
+  flex-direction: row;
+}
 .desc {
-  border-bottom: 1rpx solid #ccc;
-  border-right: 1rpx solid #ccc;
-  font-size: 16px;
-  width: 100%
+  border-bottom: 3rpx solid #888;
+  border-right: 3rpx solid #888;
+  font-size: 32rpx;
+  width: 100%;
 }
 
 .btn_view {

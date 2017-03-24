@@ -43,23 +43,26 @@ Page({
     this.setData({loading:true})
     var customer_base_info=wx.getStorageSync('customer_base_info')
     var customer=customer_base_info.customer;
-    var submit_url=app.server_url+"/risk/questionnaire/answer"
+    //var submit_url=app.server_url+"/risk/questionnaire/answer";
+    var submit_url=app.restful_url+"/restful/customer/evaluate";
     var redict_url='../home/home'
     var flag=false;
     if(customer.assess_type){
-      submit_url=app.server_url+"/risk/update/answer";
-      //redict_url='../myself/myself'
+     //说明是重新评测的
       flag=true;
     }
     wx.request({
       url: submit_url,
-      data: {result:params,phone:customer.phone},
+      data: {result:params,customer_id :customer.id},
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {'content-type':'application/x-www-form-urlencoded'}, // 设置请求的 header
       success: function(res){
-        if(res.data.ret==0){
-          customer.status=2;
-          customer.assess_type=res.data.result;
-          customer.assess_description=res.data.description;
+        if(res.data.ret){
+          if(!flag){
+            customer.status='正常';
+          }
+          customer.assess_type=res.data.obj.result;
+          customer.assess_description=res.data.obj.description;
           wx.setStorageSync('customer_base_info', customer_base_info)
           if(flag){
               wx.navigateBack({
